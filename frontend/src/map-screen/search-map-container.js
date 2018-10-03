@@ -1,6 +1,6 @@
 import React from "react";
 import SearchMap from './search-map';
-import keys from './keys';
+import keys from '../keys';
 
 export default class SearchMapContainer extends React.Component {
     render() {
