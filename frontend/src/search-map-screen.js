@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './header';
 import SearchMapContainer from './map-screen/search-map-container';
-import './map-screen/map-styling.css';
+import './stylesheets/map-styling.css';
 
 let SearchMapScreen = (props) => 
     <div>
