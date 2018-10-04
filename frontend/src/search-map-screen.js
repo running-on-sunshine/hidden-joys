@@ -5,10 +5,12 @@ import PlacesWithStandaloneSearchBox from './map-screen/search-box';
 import './stylesheets/map-styling.css';
 
 let SearchMapScreen = (props) => 
-    <div>
+    <div className="full-screen">
         <Header />
-        <PlacesWithStandaloneSearchBox />
-        <div className='map-container'><SearchMapContainer /></div>
+        <div className="screen">
+            <PlacesWithStandaloneSearchBox />
+            <div className='map-container'><SearchMapContainer /></div>
+        </div>
     </div>
 
 export default SearchMapScreen;

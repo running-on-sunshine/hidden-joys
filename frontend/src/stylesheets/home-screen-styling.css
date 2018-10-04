@@ -1,0 +1,26 @@
+.main-title {
+    /* font-family: 'Amaranth', sans-serif; */
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 4.8em;
+}
+
+.home-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-button {
+    padding: 1em 2em;
+    margin: 1em;
+    border-radius: 0.5em;
+    background-color: papayawhip;
+    font-size: 1.4em;
+    font-weight: bold;
+}
