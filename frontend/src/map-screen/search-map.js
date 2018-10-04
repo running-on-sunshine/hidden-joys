@@ -1,13 +1,16 @@
 import React from "react";
+import { connect } from 'react-redux';
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 
 const SearchMap = withScriptjs(withGoogleMap((props) =>  {
     return (
         <GoogleMap
             defaultZoom={14}
-            center={ {lat:33.848992, lng: -84.373203} }
+            center={ {lat:props.lat, lng: props.lng} }
         ></GoogleMap>
     )
 }));
 
-export default SearchMap;
+export default connect(
+    state => ({lat:state.lat, lng:state.lng})
+)(SearchMap);
