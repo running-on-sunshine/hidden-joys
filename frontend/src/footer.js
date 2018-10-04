@@ -1,6 +1,6 @@
 import React from 'react';
 
 let Footer = () =>
-    <div></div>
+    <div className="footer"></div>
 
 export default Footer;
