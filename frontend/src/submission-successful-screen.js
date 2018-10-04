@@ -3,9 +3,11 @@ import Header from './header';
 import Footer from './footer';
 
 let SubmissionSuccessfulScreen = () =>
-    <div>
+    <div className="full-screen">
         <Header />
-        <p>Thank you for your submission!</p>
+        <div className="screen">
+            <p>Thank you for your submission!</p>
+        </div>
         <Footer />
     </div>
 

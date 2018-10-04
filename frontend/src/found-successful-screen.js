@@ -3,9 +3,11 @@ import Header from './header';
 import Footer from './footer';
 
 let FoundSuccessfulScreen = () =>
-    <div>
+    <div className="full-screen">
         <Header />
-        <p>Yay! You found an item!</p>
+        <div className="screen">
+            <p>Yay! You found an item!</p>
+        </div>
         <Footer />
     </div>
 

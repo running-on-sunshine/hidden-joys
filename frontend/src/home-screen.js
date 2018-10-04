@@ -1,19 +1,21 @@
 import React from 'react';
 import Header from './header';
 import Footer from './footer';
-import { Link } from 'react-router-dom';
+import AddButton from './add-button';
+import FoundButton from './found-button';
+import './stylesheets/home-screen-styling.css';
 
 let HomeScreen = () =>
-    <div>
+    <div className="full-screen">
         <Header />
-        <h1>Hidden Joys</h1>
-        <div>Search</div>
-        <Link to="/add">
-            <button>Add</button>
-        </Link>
-        <Link to="/found">
-            <button>Found</button>
-        </Link>
+        <div className="screen home-screen">
+            <h1 className="main-title">Hidden Joys</h1>
+            <div>Search</div>
+            <div className="buttons-container">
+                <AddButton />
+                <FoundButton />
+            </div>
+        </div>
         <Footer />
     </div>
 
