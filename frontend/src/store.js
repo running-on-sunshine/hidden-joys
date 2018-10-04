@@ -4,7 +4,8 @@ import reducer from './reducer';
 let initialState = {
     lat:33.848992,
     lng: -84.373203,
-    items:[]
+    items:[],
+    currentLocation: {lat:'',lng:''}
 };
 
 let store = createStore(
