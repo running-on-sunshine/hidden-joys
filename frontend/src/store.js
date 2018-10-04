@@ -2,7 +2,9 @@ import { createStore } from 'redux';
 import reducer from './reducer';
 
 let initialState = {
-
+    lat:33.848992,
+    lng: -84.373203,
+    items:[]
 };
 
 let store = createStore(
