@@ -3,9 +3,9 @@ import Header from './header';
 import Footer from './footer';
 
 let ItemDetailsScreen = () =>
-    <div>
+    <div className="full-screen">
         <Header />
-        <div>
+        <div className="screen">
             <h3>Title</h3>
             <p>Item Location</p>
             <p>Image</p>

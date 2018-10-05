@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Header from './header';
 import Footer from './footer';
 import SearchBox from './map-screen/search-box';
+import addItemFetch from './add-item-screen/add-item-fetch';
 
 class AddItemScreen extends React.Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class AddItemScreen extends React.Component {
         this.state = {
             title: '',
             location:'current',
+            image: 'https://unsplash.com/photos/_0aKQa9gr4s',
             description: ''
         }
     };
@@ -19,7 +21,10 @@ class AddItemScreen extends React.Component {
             <div className="full-screen">
                 <Header />
                 <div>
-                    <form>
+                    <form onSubmit={event => {
+                        event.preventDefault();
+                        addItemFetch(this.state, this.props);
+                    }}>
                         <div>
                             <p>Title</p>
                             <input 
@@ -41,7 +46,6 @@ class AddItemScreen extends React.Component {
                                 <option value='search'>Search By Location</option>
                             </select>
                             {this.state.location === 'current' ? <p></p> : <SearchBox />}
-                                {/* this.props.lat & this.props.lng */}
                         </div>
                         <div>
                             <input type="file" />

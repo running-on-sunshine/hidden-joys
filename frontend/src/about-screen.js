@@ -3,9 +3,11 @@ import Header from './header';
 import Footer from './footer';
 
 let AboutScreen = () =>
-    <div>
+    <div className="full-screen">
         <Header />
-        <p>About</p>
+            <div className="screen">
+                <p>About</p>
+            </div>
         <Footer />
     </div>
 

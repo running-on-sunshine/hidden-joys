@@ -12,7 +12,7 @@ import NotFoundScreen from './not-found-screen';
 
 let Router = () =>
     <HashRouter>
-        <div>
+        <div className="full-screen">
             <Switch>
                 <Route exact path="/" component={HomeScreen} />
                 <Route exact path='/about' component={AboutScreen} />

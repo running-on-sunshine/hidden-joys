@@ -6,9 +6,9 @@ import CurrentLocationButton from './map-screen/current-location-button';
 import './stylesheets/map-styling.css';
 
 let SearchMapScreen = (props) => 
-    <div>
+    <div className="full-screen">
         <Header />
-        <div>
+        <div className="screen">
             <div className='search-input-container'>
                 <CurrentLocationButton />
                 <PlacesWithStandaloneSearchBox />

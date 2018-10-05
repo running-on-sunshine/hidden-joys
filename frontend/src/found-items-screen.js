@@ -3,12 +3,14 @@ import Header from './header';
 import Footer from './footer';
 
 let FoundItemsScreen = () =>
-    <div>
+    <div className="full-screen">
         <Header />
-        <form>
-            <p>Search by item id</p>
-            <button type="submit">Submit</button>
-        </form>
+        <div className="screen">
+            <form>
+                <p>Search by item id</p>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
         <Footer />
     </div>
 
