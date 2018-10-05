@@ -10,7 +10,7 @@ let buildBody = (state, lat, lng) => ({
 })
 
 let fetchRequest = (body) => {
-    fetch('http://localhost:5000/items', {
+    fetch(process.env.REACT_APP_API_URL + '/items', {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
