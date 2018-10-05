@@ -35,15 +35,15 @@ const PlacesWithStandaloneSearchBox = compose(
   }),
   withScriptjs
 )(props => 
-  <div data-standalone-searchbox="">
+  <div data-standalone-searchbox="" className="search-box-container">
     <StandaloneSearchBox
       ref={props.onSearchBoxMounted}
       bounds={props.bounds}
       onPlacesChanged={props.onPlacesChanged}
     >
-      <input className='search-box'
+      <input className='search-box home-search-box'
         type="text"
-        placeholder="Location"
+        placeholder="Search Map"
       />
     </StandaloneSearchBox>
   </div>

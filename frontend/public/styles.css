@@ -19,17 +19,21 @@ html, body {
     align-items: center;
     font-size: 1.4em;
     background-color: #F7E305;
-    border-radius: 0.2em;
 }
 
 .nav-item {
     margin: 0.8em;
     text-decoration: none;
     font-weight: bold;
+    font-family: 'Lato', sans-serif;
 }
 
 .nav-item:visited {
     color: black;
+}
+
+.play-dropdown-menu-list {
+    list-style: none;
 }
 
 .screen {
