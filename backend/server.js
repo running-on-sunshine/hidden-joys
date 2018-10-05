@@ -2,7 +2,9 @@ const express = require('express');
 const pg = require('pg-promise')();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const db = pg('postgres://clint@localhost:5432/hidden-joys');
+const dotenv = require('dotenv');
+dotenv.config();
+const db = pg(process.env.PG_URL);
 
 let server = express();
 server.use(bodyParser.json());
