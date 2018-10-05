@@ -1,7 +1,14 @@
 # Hidden Joys  
 
 
+## Technologies Used  
+- HTML, CSS, JavaScript, Node.js, Express, React, Redux, Google Maps API
+- Libraries:  
+    - body-parser, cors, react-dom, react-google-maps, react-redux, react-router-dom, recompose, 
+
 ## Features  
+- Adding new Items  
+    - When users have hidden an item for others to find they fill out a form that includes a title, location, image, and description. For the location, the user can either use their current location or they can select one from the search box. The description field is where the user can enter hints to help other people find that item.
 - GOOGLE MAPS
     - User can search for a specific location or use their current location to set the center of the map.
 
