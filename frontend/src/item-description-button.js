@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 let ItemDescriptionButton = (props) => 
     <Link to={`/items/${props.id}`}>
-        <button className='form-button'>Got To Item Description Page</button>
+        <button className='form-button'>View Item Description</button>
     </Link>
     
 
