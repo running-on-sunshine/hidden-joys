@@ -17,16 +17,31 @@ class AddItemScreen extends React.Component {
         }
     };
 
+    componentDidMount() {
+        this.props.dispatch({
+            type: 'UPDATE_ITEM_ID',
+            itemId: ''
+        });
+    };
+
     render() {
+        let updateItemId = (id) => {
+            this.props.dispatch({
+                type: 'UPDATE_ITEM_ID',
+                itemId: id
+            });
+            this.props.history.push(`/submit-success`);
+        };
+
         return (
             <div className="full-screen">
                 <Header />
-                <div className='screen  form-screen'>
+                <div className='screen form-screen'>
                     <form 
                     className='add-item-form'
                     onSubmit={event => {
                         event.preventDefault();
-                        addItemFetch(this.state, this.props);
+                        addItemFetch(this.state, this.props, updateItemId);
                     }}>
                         <p className='form-title'>Hide New Item</p>
                         <div className='form-section'>
@@ -68,7 +83,7 @@ class AddItemScreen extends React.Component {
                             />
                         </div>
                         <div className='form-section'>
-                            <button type='submit' className='form-submit-button'>Submit</button>
+                            <button type='submit' className='form-button'>Submit</button>
                         </div>
                         
                     </form>
