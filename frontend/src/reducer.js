@@ -2,10 +2,13 @@ let updateLocation = (oldState, action) => {
     let lat = action.location.lat;
     let lng = action.location.lng;
     return {...oldState, lat, lng}
-}
+};
+
+let updateItemId = (oldState, action) => ({...oldState, itemId: action.itemId});
 
 let reducers = {
     'UPDATE_LOCATION': updateLocation,
+    'UPDATE_ITEM_ID': updateItemId
 };
 
 let reducer = (oldState, action) => {

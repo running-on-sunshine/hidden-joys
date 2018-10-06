@@ -7,8 +7,14 @@
     - body-parser, cors, react-dom, react-google-maps, react-redux, react-router-dom, recompose, 
 
 ## Features  
-- Adding new Items  
-    - When users have hidden an item for others to find they fill out a form that includes a title, location, image, and description. For the location, the user can either use their current location or they can select one from the search box. The description field is where the user can enter hints to help other people find that item.
+- USERS CAN HIDE NEW ITEMS:  
+    - When a user wants to hide a new item, they fill out a form which includes an item title, location, image and description. The user can either use their current location or search for an address using the Google Places Library. The description field allows the user to give a little more info to help others find the item they hid.  
+
+        After the user submits the form, they are directed to a screen thanking them for their submission. They are also given an id to include with their item so whoever finds the item can report that they found it. 
+
+    <img src="frontend/public/assets/add-item-screen.jpg"/>   
+    <img src="frontend/public/assets/submit-success-screen.jpg"/>
+
 - GOOGLE MAPS
     - User can search for a specific location or use their current location to set the center of the map.
 

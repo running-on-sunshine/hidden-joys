@@ -7,9 +7,9 @@ let buildBody = (state, lat, lng) => ({
     lng: lng,
     image: state.image,
     description: state.description
-})
+});
 
-let fetchRequest = (body) => {
+let fetchRequest = (body, updateItemId) => {
     fetch(process.env.REACT_APP_API_URL + '/items', {
         method: 'POST',
         body: JSON.stringify(body),
@@ -19,21 +19,22 @@ let fetchRequest = (body) => {
         }
     })
     .then(() => {
-        console.log('Check database to confirm entry')
+        console.log('Check database to confirm entry');
+        updateItemId(body.id);
     })
 };
 
-let addItemFetch = (state, props) => {
+let addItemFetch = (state, props, updateItemId) => {
     if (state.location === 'current') {
         navigator.geolocation.getCurrentPosition(position => {
             let lat = position.coords.latitude;
             let lng = position.coords.longitude;
             let body = buildBody(state, lat, lng);
-            fetchRequest(body);
+            fetchRequest(body, updateItemId);
         });
     } else {
         let body = buildBody(state, props.lat, props.lng);
-        fetchRequest(body);
+        fetchRequest(body, updateItemId);
     }
 };
 

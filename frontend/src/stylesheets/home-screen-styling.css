@@ -1,6 +1,6 @@
 .main-title {
     /* font-family: 'Amaranth', sans-serif; */
-    font-family: 'Cabin Sketch', cursive;
+    font-family: var(--title-font);
     font-size: 4.8em;
 }
 
