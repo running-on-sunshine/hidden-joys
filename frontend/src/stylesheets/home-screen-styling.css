@@ -30,7 +30,7 @@
     /* margin: 1em; */
     border-radius: 0.5em;
     font-size: 1.4em;
-    background-color: rgb(255, 149, 11);
+    background-color: var(--dark-button-color);
     border: none;
 }
 
@@ -44,7 +44,7 @@
     padding: 1em 2em;
     margin: 1em;
     border-radius: 0.5em;
-    background-color: papayawhip;
+    background-color: var(--light-button-color);
     font-size: 1.4em;
     font-weight: bold;
     border: none;
