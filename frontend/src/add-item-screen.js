@@ -4,6 +4,7 @@ import Header from './header';
 import Footer from './footer';
 import SearchBox from './map-screen/search-box';
 import addItemFetch from './add-item-screen/add-item-fetch';
+import './stylesheets/add-item-screen.css';
 
 class AddItemScreen extends React.Component {
     constructor(props) {
@@ -20,14 +21,18 @@ class AddItemScreen extends React.Component {
         return (
             <div className="full-screen">
                 <Header />
-                <div>
-                    <form onSubmit={event => {
+                <div className='screen  form-screen'>
+                    <form 
+                    className='add-item-form'
+                    onSubmit={event => {
                         event.preventDefault();
                         addItemFetch(this.state, this.props);
                     }}>
-                        <div>
-                            <p>Title</p>
+                        <p className='form-title'>Hide New Item</p>
+                        <div className='form-section'>
+                            <p className='form-section-title'>Title</p>
                             <input 
+                                className='input-box'
                                 type='text'
                                 value={this.state.title}
                                 onChange={event => {
@@ -35,9 +40,10 @@ class AddItemScreen extends React.Component {
                                 }}
                             />
                         </div>
-                        <div>
-                            <p>Location</p>
+                        <div className='form-section'>
+                            <p className='form-section-title'>Location</p>
                             <select 
+                                className='input-box'
                                 value={this.state.location}
                                 onChange={event => {
                                     this.setState({location:event.target.value})
@@ -47,19 +53,24 @@ class AddItemScreen extends React.Component {
                             </select>
                             {this.state.location === 'current' ? <p></p> : <SearchBox />}
                         </div>
-                        <div>
-                            <input type="file" />
+                        <div className='form-section'>
+                        <p className='form-section-title'>Image</p>
+                            <input className='input-box' type="file" />
                         </div>
-                        <div>
-                            <p>Description</p>
+                        <div className='form-section'>
+                            <p className='form-section-title'>Description</p>
                             <textarea 
+                                className='input-box description-box'
                                 value={this.state.description}
                                 onChange={event => {
                                     this.setState({description: event.target.value})
                                 }}
                             />
                         </div>
-                        <button type='submit'>Submit</button>
+                        <div className='form-section'>
+                            <button type='submit' className='form-submit-button'>Submit</button>
+                        </div>
+                        
                     </form>
                 </div>
                 <Footer />
