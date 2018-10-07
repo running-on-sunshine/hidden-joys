@@ -6,9 +6,12 @@ let updateLocation = (oldState, action) => {
 
 let updateItemId = (oldState, action) => ({...oldState, itemId: action.itemId});
 
+let updateItems = (oldState, action) => ({...oldState, items: action.items});
+
 let reducers = {
     'UPDATE_LOCATION': updateLocation,
-    'UPDATE_ITEM_ID': updateItemId
+    'UPDATE_ITEM_ID': updateItemId,
+    'UPDATE_ITEMS': updateItems
 };
 
 let reducer = (oldState, action) => {
