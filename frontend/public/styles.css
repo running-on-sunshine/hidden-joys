@@ -20,6 +20,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: black;
     font-size: 1.4em;
     background-color: #F7E305;
 }
@@ -39,6 +40,7 @@ html, body {
     margin-left: 0.5em;
     text-decoration: none;
     font-weight: bold;
+    color: black;
     font-family: var(--main-text-font);
 }
 
