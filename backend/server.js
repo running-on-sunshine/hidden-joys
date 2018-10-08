@@ -29,7 +29,29 @@ let getAllItems = (req, res) => {
     .catch(err => res.send({error: err}))
 };
 
+let getOneItemQuery = (id) =>
+    `SELECT * FROM items WHERE items.id = '${id}';`;
+
+let getOneItem = (req, res) => {
+    db.one(getOneItemQuery(req.params.id))
+    .then(data => res.send({data}))
+    .catch(err => res.send({data: 'Error'}))
+};
+
+let updateItemFoundStatusQuery = (item) =>
+    `UPDATE items
+    SET found = ${item.found}
+    WHERE items.id = '${item.id}';
+    `;
+
+let updateItemFoundStatus = (req, res) => {
+    db.query(updateItemFoundStatusQuery(req.body))
+    .then(() => res.end())
+};
+
 server.post('/items', addNewItem);
 server.get('/items', getAllItems);
+server.get('/items/:id', getOneItem);
+server.put('/items/:id', updateItemFoundStatus);
 
 server.listen(5000);

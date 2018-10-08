@@ -1,30 +1,60 @@
 import React from 'react';
 import Header from './header';
 import Footer from './footer';
+import findItemFetch from './find-item-fetch';
 import './stylesheets/found-items-screen.css';
 
-let FoundItemsScreen = () =>
-    <div className="full-screen">
-        <Header />
-        <div className="screen">
-            <form 
-            className="add-item-form"
-            onSubmit={event => {
-                event.preventDefault();
-            }}>
-                <p className='form-title'>Did you find some joy? <i className="far fa-smile-wink"></i></p>
-                <p className='form-text'>Wooo! That's super awesome!</p>
-                <p className='form-text'>To mark your piece of joy as found, find the id attached to your joy and enter it below.</p>
-                <div className='form-section'>
-                    <p className='form-section-title'>Enter joy id:</p>
-                    <input className='input-box' type='search'></input>
-                    <button className='search-items-button' type="submit">
-                        <i className="fas fa-chevron-circle-right"></i>
-                    </button>
+class FoundItemsScreen extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            id: '',
+            message: ''
+        }
+    }
+
+    render() {
+        let invalidId = () => {
+            this.setState({id: ''});
+            this.setState({message: 'Invalid id'});
+        }
+
+        return (
+            <div className="full-screen">
+                <Header />
+                <div className="screen">
+                    <form 
+                        className="add-item-form"
+                        onSubmit={event => {
+                            event.preventDefault();
+                            findItemFetch(this.state.id, invalidId);
+                    }}>
+                        <p className='form-title'>Did you find some joy? <i className="far fa-smile-wink"></i></p>
+                        <p className='form-text'>Wooo! That's super awesome!</p>
+                        <p className='form-text'>To mark your piece of joy as found, find the id attached to your joy and enter it below.</p>
+                        <div className='form-section'>
+                            <p className='form-section-title'>Enter joy id:</p>
+                            <input 
+                                className='input-box' 
+                                type='text'
+                                value={this.state.id}
+                                onChange={event => {
+                                    this.setState({id: event.target.value})
+                                }} 
+                            />
+                            <button 
+                                className='search-items-button' 
+                                type="submit">
+                                <i className="fas fa-chevron-circle-right" />
+                            </button>
+                            <p>{this.state.message}</p>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
-        <Footer />
-    </div>
+                <Footer />
+            </div>
+        )
+    };
+};
 
 export default FoundItemsScreen;
