@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class PlayDropdownMenu extends React.Component {
     constructor(props) {
@@ -28,17 +27,21 @@ class PlayDropdownMenu extends React.Component {
     render() {
         return (
             <div className="play-dropdown-menu nav-item">
-                <div onClick={this.showMenu}>Let's play!</div>
+                <div onClick={this.showMenu}>Let's play! <i className="fas fa-angle-down"></i>
+                </div>
 
                 { this.state.showMenu
                     ? (
                         <ul className="play-dropdown-menu-list">
-                            <Link to="/search" className="nav-item"> 
-                                <li>Search Joys</li>
-                            </Link>
-                            <Link to="/add" className="nav-item"> 
-                                <li>Add Joy</li>
-                            </Link>
+                            <li className="dropdown-list-item">
+                                <a href="/#/search" className="dropdown-link">Search Joys</a>
+                             </li>
+                            <li className="dropdown-list-item">
+                                <a href="/#/add" className="dropdown-link">Add Joy</a>
+                            </li>
+                            <li className="dropdown-list-item">
+                                <a href="/#/found" className="dropdown-link">Found Joys</a>
+                            </li>
                         </ul>
                     )
                     : ( null ) 

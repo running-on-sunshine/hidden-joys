@@ -1,0 +1,8 @@
+.search-items-button {
+    padding: 0.5em 0.7em;
+    border-radius: 0.5em;
+    font-size: 1.4em;
+    background-color: var(--dark-button-color);
+    border: none;
+    cursor: pointer;
+}

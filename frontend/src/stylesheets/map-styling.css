@@ -12,8 +12,7 @@
 
 .search-box {
     box-sizing: border-box;
-    border: 1 px solid transparent;
-    width: 200px;
+    width: 20rem;
     border: 1px solid transparent;
     border-radius: 3px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
@@ -21,4 +20,17 @@
     outline: none;
     text-overflow: ellipses;
     padding: 2px 10px;
+}
+
+@media(min-width: 768px) {
+    .search-box {
+        width: 33rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media(min-width: 1200px) {
+    .search-box {
+        width: 45rem;
+    }
 }

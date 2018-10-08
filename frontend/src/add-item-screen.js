@@ -49,6 +49,7 @@ class AddItemScreen extends React.Component {
                             <input 
                                 className='input-box'
                                 type='text'
+                                required
                                 value={this.state.title}
                                 onChange={event => {
                                     this.setState({title: event.target.value})

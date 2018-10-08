@@ -1,20 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PlayDropdownMenu from './play-dropdown-menu';
 
 let Header = () =>
     <div className="header">
-        <Link to="/"
+        <a href="/#/" 
             className="nav-item">
-            <p>
-                Hidden Joys <i className="far fa-smile"></i> 
+            <p className="nav-item">Hidden Joys <i className="far fa-smile"></i> 
             </p>
-        </Link>
-        <Link to="/about"
-            className="nav-item">
-            <p>About</p>
-        </Link>
-        <PlayDropdownMenu />
+        </a>
+        <div className='header-right'>
+            <a href="/#/about"
+                className="nav-item">
+                <p className="nav-item">About</p>
+            </a>
+            <PlayDropdownMenu />
+        </div>
     </div>
 
 export default Header;

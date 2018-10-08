@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Header from './header';
+import Footer from './footer';
 import SearchMapContainer from './map-screen/search-map-container';
 import PlacesWithStandaloneSearchBox from './map-screen/search-box';
 import CurrentLocationButton from './map-screen/current-location-button';
@@ -34,6 +35,7 @@ class SearchMapScreen extends React.Component {
                     </div>
                     <div className='map-container'><SearchMapContainer /></div>
                 </div>
+                <Footer />
             </div>
         )
     }
