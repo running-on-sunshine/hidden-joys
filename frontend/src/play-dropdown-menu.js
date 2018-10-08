@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class PlayDropdownMenu extends React.Component {
     constructor(props) {
@@ -34,13 +35,13 @@ class PlayDropdownMenu extends React.Component {
                     ? (
                         <ul className="play-dropdown-menu-list">
                             <li className="dropdown-list-item">
-                                <a href="/#/search" className="dropdown-link">Search Joys</a>
+                                <NavLink to="/search" className="dropdown-link">Search Joys</NavLink>
                              </li>
                             <li className="dropdown-list-item">
-                                <a href="/#/add" className="dropdown-link">Add Joy</a>
+                                <NavLink to="/add" className="dropdown-link">Add Joy</NavLink>
                             </li>
                             <li className="dropdown-list-item">
-                                <a href="/#/found" className="dropdown-link">Found Joys</a>
+                                <NavLink to="/found" className="dropdown-link">Found Joys</NavLink>
                             </li>
                         </ul>
                     )
