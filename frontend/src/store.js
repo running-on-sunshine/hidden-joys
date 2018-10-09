@@ -2,8 +2,8 @@ import { createStore } from 'redux';
 import reducer from './reducer';
 
 let initialState = {
-    lat:33.848992,
-    lng: -84.373203,
+    lat: 33.7490,
+    lng: -84.3880,
     items:[],
     currentLocation: {lat:'',lng:''},
     itemId: ''
