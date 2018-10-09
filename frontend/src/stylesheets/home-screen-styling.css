@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     background-image: url('https://source.unsplash.com/Wmuu76rFl0Y/800x600');
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: cover;
     /* background-position: top; */
     /* background-image: url('https://source.unsplash.com/LLcAJbEh1_Q/800x600'); */
@@ -79,7 +79,8 @@
     }
 
     .nav-button {
-        padding: 1.5em 2em;
+        padding: 1.5em;
+        font-size: 1.5em;
     }
 }
 

@@ -34,20 +34,21 @@ class FoundItemsScreen extends React.Component {
                         <p className='form-text'>To mark your piece of joy as found, find the id attached to your joy and enter it below.</p>
                         <div className='form-section'>
                             <p className='form-section-title'>Enter joy id:</p>
-                            <input 
-                                className='input-box' 
-                                type='text'
-                                value={this.state.id}
-                                onChange={event => {
-                                    this.setState({id: event.target.value})
-                                }} 
-                            />
-                            <button 
-                                className='search-items-button' 
-                                type="submit">
-                                <i className="fas fa-chevron-circle-right" />
-                            </button>
-                            <p>{this.state.message}</p>
+                            <div className=''>
+                                <input 
+                                    className='input-box' 
+                                    type='text'
+                                    value={this.state.id}
+                                    onChange={event => {
+                                        this.setState({id: event.target.value})
+                                    }} 
+                                />
+                                <button 
+                                    className='form-button search-items-button' 
+                                    type="submit">Found!
+                                </button>
+                                <p>{this.state.message}</p>
+                            </div>
                         </div>
                     </form>
                 </div>

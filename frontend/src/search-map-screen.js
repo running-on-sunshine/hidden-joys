@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
 import SearchMapContainer from './map-screen/search-map-container';
@@ -33,7 +34,12 @@ class SearchMapScreen extends React.Component {
                         <CurrentLocationButton />
                         <PlacesWithStandaloneSearchBox />
                     </div>
-                    <div className='map-container'><SearchMapContainer /></div>
+                    <div className='map-container'><SearchMapContainer /></div>                   <div className='form-section'>
+                    <div className='form-btns-container'>
+                        <Link to='/add'><button className='form-button'>Add Joy</button></Link>
+                        <Link to='/search'><button className='form-button'>Find Joy</button></Link>
+                    </div>
+                </div>
                 </div>
                 <Footer />
             </div>
