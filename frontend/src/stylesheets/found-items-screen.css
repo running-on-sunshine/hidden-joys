@@ -1,3 +1,10 @@
+.found-items-image-background {
+    background-image: url('https://source.unsplash.com/2M_sDJ_agvs/1400x1600');
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    background-position: center;
+}
+
 .search-items-button {
     padding: 0.5em 0.7em;
     border-radius: 0.5em;
@@ -5,4 +12,8 @@
     background-color: var(--dark-button-color);
     border: none;
     cursor: pointer;
+}
+
+.search-id-form-section {
+    display: flex;
 }

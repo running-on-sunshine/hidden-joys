@@ -1,6 +1,6 @@
 import foundItemFetch from './found-item-fetch';
 
-let findItemFetch = (id, invalidId) => {
+let findItemFetch = (id, invalidId, clearMessage, updateItemId) => {
     fetch(process.env.REACT_APP_API_URL + '/items/' + id)
     .then(res => res.json())
     .then(data => {
@@ -8,7 +8,8 @@ let findItemFetch = (id, invalidId) => {
             invalidId();
         }
         else {
-            foundItemFetch(data.data);
+            clearMessage();
+            foundItemFetch(data.data, updateItemId);
         }
     });
 };

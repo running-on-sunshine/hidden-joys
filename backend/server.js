@@ -49,9 +49,21 @@ let updateItemFoundStatus = (req, res) => {
     .then(() => res.end())
 };
 
+let updateItemCommentQuery = (id, comment) =>
+    `UPDATE items
+    SET comment = '${comment}'
+    WHERE items.id = '${id}';
+    `;
+
+let updateItemComment = (req, res) => {
+    db.query(updateItemCommentQuery(req.body.id, req.body.comment))
+    .then(() => res.end())
+};
+
 server.post('/items', addNewItem);
 server.get('/items', getAllItems);
 server.get('/items/:id', getOneItem);
 server.put('/items/:id', updateItemFoundStatus);
+server.put('/items/:id/comment', updateItemComment);
 
 server.listen(5000);
