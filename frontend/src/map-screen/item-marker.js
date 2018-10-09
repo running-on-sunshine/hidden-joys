@@ -1,23 +1,45 @@
 import React from 'react';
 import { Marker, InfoWindow } from 'react-google-maps';
-import ItemInfoWindowContent from './item-info-window'; 
+import ItemInfoWindowContent from './item-info-window';
 
-let ItemMarker = (props) => 
-    <Marker
-        onClick={() => {
-            props.updateActiveMarker(props.item);
-        }}
-        position={props.location}
-    >
-    {props.item === props.activeMarker
-        ? <InfoWindow
-            maxWidth={300}
-            position={props.location}
-            onCloseClick={() => props.updateActiveMarker(null)} 
-        >
-            <ItemInfoWindowContent item={props.item}/>
-        </InfoWindow>
-        : null}
-    </Marker>
+class ItemMarker extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOpen: false,
+            activeMarker: this.props.activeMarker
+        }
+    }
+    toggleOpen = () => {
+        this.setState({isOpen: !this.state.isOpen}, () => {
+            if (!this.state.isOpen) {
+                this.setState({activeMarker: false}, () => {
+                    this.props.closeMarkers(null)
+                })
+            } else {
+                this.props.closeMarkers(this.props.itemId)
+            }
+        })
+    };
+    componentWillReceiveProps(nextProps) {
+        this.setState({activeMarker: nextProps.activeMarker})
+    };
+    render() {
+        return (
+            <div>
+                <Marker
+                    onClick={this.toggleOpen}
+                    position={this.props.location}
+                >
+                { this.state.isOpen && this.state.activeMarker ?
+                    <InfoWindow maxWidth={400} defaultPosition={ this.props.location } onCloseClick={this.props.onToggleOpen}>
+                        <ItemInfoWindowContent item={this.props.item}/>
+                    </InfoWindow> : null
+                }
+                </Marker>
+            </div>
+        )
+    }
+};
 
 export default ItemMarker;

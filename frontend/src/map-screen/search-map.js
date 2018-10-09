@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from 'react-redux';
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 import ItemMarker from './item-marker';
 
@@ -8,26 +7,20 @@ const SearchMap = withScriptjs(withGoogleMap((props) =>  {
             <ItemMarker 
                 key={item.id}
                 itemId={item.id}
-                location={{lat:Number(item.lat), lng:Number(item.lng)}}
-                updateActiveMarker={props.updateActiveMarker}
+                closeMarkers={props.closeOtherMarkers}
                 item={item}
-                activeMarker={props.activeMarker}
+                location={{lat:Number(item.lat), lng:Number(item.lng)}}
+                activeMarker={item.id === props.activeMarker ? true : false}
             />
         )
     return (
         <GoogleMap
             defaultZoom={14}
-            center={ {lat: props.lat, lng: props.lng} }
-            onClick={() => {props.updateActiveMarker(null)}}
-            onCenterChanged={() => {
-                console.log('Center Changed')
-            }}
+            center={ props.location }
         >
         {markers}
         </GoogleMap>
     )
 }));
 
-export default connect(
-    state => ({lat: state.lat, lng: state.lng, items:state.items})
-)(SearchMap);
+export default SearchMap;

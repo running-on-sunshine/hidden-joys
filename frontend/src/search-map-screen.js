@@ -12,13 +12,11 @@ class SearchMapScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            lat: this.props.lat,
-            lng: this.props.lng
+            location: {lat:this.props.lat, lng: this.props.lng}
         }
     };
 
     componentDidMount() {
-        // Get All Items from Database and add them to global store
         fetch(process.env.REACT_APP_API_URL + '/items')
         .then(res => res.json())
         .then(items => {
@@ -39,8 +37,9 @@ class SearchMapScreen extends React.Component {
                         <PlacesWithStandaloneSearchBox />
                     </div>
                     <div className='map-container'>
-                        <SearchMapContainer 
-                            location={ {lat: this.state.lat, lng: this.state.lng} }
+                        <SearchMapContainer
+                            location={ {lat: this.props.lat, lng: this.props.lng } }
+                            items={this.props.items}
                         />
                     </div>
                     <div className='form-btns-container'>
