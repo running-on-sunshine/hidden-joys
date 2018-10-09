@@ -10,6 +10,10 @@ import './stylesheets/map-styling.css';
 class SearchMapScreen extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            lat: this.props.lat,
+            lng: this.props.lng
+        }
     };
 
     componentDidMount() {
@@ -33,7 +37,11 @@ class SearchMapScreen extends React.Component {
                         <CurrentLocationButton />
                         <PlacesWithStandaloneSearchBox />
                     </div>
-                    <div className='map-container'><SearchMapContainer /></div>
+                    <div className='map-container'>
+                        <SearchMapContainer 
+                            location={ {lat: this.state.lat, lng: this.state.lng} }
+                        />
+                    </div>
                 </div>
                 <Footer />
             </div>
@@ -42,5 +50,5 @@ class SearchMapScreen extends React.Component {
 };
 
 export default connect(
-    state => ({items: state.items})
+    state => ({lat: state.lat, lng: state.lng, items: state.items})
 )(SearchMapScreen);
