@@ -22,6 +22,51 @@
     padding: 2px 10px;
 }
 
+.info-window-container {
+    display: flex;
+    align-items: center;
+    margin: .5em;
+}
+.info-window-image {
+    width: 50px;
+    height: 50px;
+}
+
+.info-window-section {
+    margin: .5em;
+}
+
+.info-window-title {
+    font-family: var(--main-text-font);
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.info-window-status {
+    font-family: var(--main-text-font);
+    font-size: 1rem;
+}
+
+.info-window-link {
+    font-family: var(--main-text-font);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+@media(min-width: 360px) {
+    .info-window-image {
+        width: 70px;
+        height: 70px;
+    }
+    .info-window-title, .info-window-link {
+        font-size: 1.5rem;
+    }
+    .info-window-status {
+        font-size: 1.2rem;
+    }
+}
+
 @media(min-width: 768px) {
     .search-box {
         width: 33rem;

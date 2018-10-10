@@ -12,7 +12,7 @@ class AddItemScreen extends React.Component {
         this.state = {
             title: '',
             location:'current',
-            image: 'https://unsplash.com/photos/_0aKQa9gr4s',
+            image: 'https://source.unsplash.com/_0aKQa9gr4s/',
             description: ''
         }
     };

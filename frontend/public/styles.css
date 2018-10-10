@@ -8,6 +8,9 @@ html, body {
     --dark-button-color: rgb(255, 149, 11);
     --light-button-color: papayawhip;
 }
+* {
+    box-sizing: border-box;
+}
 
 .full-screen {
     width: 100%;
