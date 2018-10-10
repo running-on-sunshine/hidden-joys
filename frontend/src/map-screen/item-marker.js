@@ -32,7 +32,7 @@ class ItemMarker extends React.Component {
                     position={this.props.location}
                 >
                 { this.state.isOpen && this.state.activeMarker ?
-                    <InfoWindow maxWidth={800} maxHeigth={800} defaultPosition={ this.props.location } onCloseClick={this.props.onToggleOpen}>
+                    <InfoWindow maxWidth={800} maxHeight={800} defaultPosition={ this.props.location } onCloseClick={this.props.onToggleOpen}>
                         <ItemInfoWindowContent item={this.props.item}/>
                     </InfoWindow> : null
                 }
