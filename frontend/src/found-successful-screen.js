@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
-import updateCommentFetch from './update-comment-fetch';
+import updateCommentFetch from './found-successful-screen/update-comment-fetch';
 import './stylesheets/add-item-screen.css';
 
 class FoundSuccessfulScreen extends React.Component {

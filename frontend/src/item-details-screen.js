@@ -23,17 +23,19 @@ class ItemDetailScreen extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='full-screen'>
                 <Header />
                 <div className='screen'>
                     {this.state.item === 'Error' ? 
                         <div>BAD URL</div> :
-                        <div>
-                            <h3>{`Title: ${this.state.item.title}`}</h3>
-                            <p>{`Location: Lat:${this.state.item.lat} / Lng: ${this.state.item.lng}`}</p>
-                            <p>{`Image url: ${this.state.item.image}`}</p>
-                            <p>{`Description: ${this.state.item.description}`}</p>
-                        </div> 
+                        <div className='form-container'>
+                            <div className='add-item-form'>
+                                <h3>{`Title: ${this.state.item.title}`}</h3>
+                                <p>{`Location: Lat:${this.state.item.lat} / Lng: ${this.state.item.lng}`}</p>
+                                <p>{`Image url: ${this.state.item.image}`}</p>
+                                <p>{`Description: ${this.state.item.description}`}</p>
+                            </div> 
+                        </div>
                     }
                 </div>
                 <Footer />

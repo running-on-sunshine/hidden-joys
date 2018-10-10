@@ -36,7 +36,7 @@ class AddItemScreen extends React.Component {
         return (
             <div className="full-screen">
                 <Header />
-                <div className='screen form-screen'>
+                <div className='screen form-screen success-image-background'>
                     <form 
                     className='add-item-form'
                     onSubmit={event => {
@@ -86,7 +86,6 @@ class AddItemScreen extends React.Component {
                         <div className='form-section'>
                             <button type='submit' className='form-button'>Submit</button>
                         </div>
-                        
                     </form>
                 </div>
                 <Footer />
