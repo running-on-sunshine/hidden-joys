@@ -5,10 +5,10 @@
 }
 
 .success-image-background {
-    background-image: url('https://source.unsplash.com/LLcAJbEh1_Q/800x600');
-    background-repeat: no-repeat;
+    background-image: url('https://source.unsplash.com/Wmuu76rFl0Y/700x500');
+    /* background-repeat: no-repeat; */
     background-size: cover;
-    background-position: bottom;
+    /* background-position: center; */
 }
 
 .form-title {
@@ -18,15 +18,19 @@
     text-align: center;
 }
 
+.form-container {
+    display: flex;
+}
+
 .add-item-form {
     width: 300px;
-    height: max-content;
-    margin: auto;
+    /* height: max-content; */
+    margin: 1.5em auto;
     align-items: center;
     border: 2px solid var(--dark-button-color);
     background-color: var(--light-button-color);
     border-radius: 1em;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .form-section-title {
@@ -56,6 +60,7 @@
     text-align: center;
     padding: .5rem;
 }
+
 .form-submit-button {
     background-color: var(--dark-button-color);
     font-size: 1.7rem;
@@ -114,6 +119,7 @@
 @media(min-width: 768px) {
     .add-item-form {
         width: 500px;
+        border: 4px solid var(--dark-button-color);
     }
     .form-title {
         font-size: 4rem;

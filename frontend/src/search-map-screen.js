@@ -6,6 +6,7 @@ import Footer from './footer';
 import SearchMapContainer from './map-screen/search-map-container';
 import PlacesWithStandaloneSearchBox from './map-screen/search-box';
 import CurrentLocationButton from './map-screen/current-location-button';
+import FilterMapButtons from './map-screen/filter-map-buttons';
 import './stylesheets/map-styling.css';
 
 class SearchMapScreen extends React.Component {
@@ -36,6 +37,9 @@ class SearchMapScreen extends React.Component {
                         <CurrentLocationButton />
                         <PlacesWithStandaloneSearchBox />
                     </div>
+                    <div className='filter-map-btns-container'>
+                        <FilterMapButtons />
+                    </div>
                     <div className='map-container'>
                         <SearchMapContainer
                             location={ {lat: this.props.lat, lng: this.props.lng } }
@@ -44,7 +48,6 @@ class SearchMapScreen extends React.Component {
                     </div>
                     <div className='form-btns-container'>
                         <Link to='/add'><button className='form-button'>Add Joy</button></Link>
-                        <Link to='/search'><button className='form-button'>Find Joy</button></Link>
                     </div>
                 </div>
                 <Footer />
