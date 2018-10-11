@@ -11,14 +11,14 @@ server.use(bodyParser.json());
 server.use(cors());
 
 let addNewItemQuery = (itemObject) =>
-    `INSERT INTO items (id, title, lat, lng, image, description)
-     VALUES ('${itemObject.id}', '${itemObject.title}', ${itemObject.lat}, 
-             ${itemObject.lng}, '${itemObject.image}', '${itemObject.description}');`;
+    `INSERT INTO items (title, lat, lng, image, found_code)
+     VALUES ('${itemObject.title}', ${itemObject.lat}, ${itemObject.lng}, 
+             '${itemObject.image}', '${itemObject.found_code}') RETURNING *;`;
 
 let addNewItem = (req, res) => {
-    console.log(req.body);
     db.query(addNewItemQuery(req.body))
-    .then(() => res.end());
+    .then(data => res.send(data))
+    .catch(err => res.send(err))
 };
 
 let getAllItemsQuery = () => `SELECT * FROM items;`;
@@ -38,9 +38,18 @@ let getOneItem = (req, res) => {
     .catch(err => res.send({data: 'Error'}))
 };
 
+let getItemByCodeQuery = (code) =>
+    `SELECT * FROM items WHERE items.found_code = '${code}';`;
+
+let getItemByCode = (req, res) => {
+    db.one(getItemByCodeQuery(req.params.id))
+    .then(data => res.send({data}))
+    .catch(err => res.send({data: 'Error'}))
+};
+
 let updateItemFoundStatusQuery = (item) =>
     `UPDATE items
-    SET found = ${item.found}
+    SET item_found = ${item.found}
     WHERE items.id = '${item.id}';
     `;
 
@@ -51,7 +60,7 @@ let updateItemFoundStatus = (req, res) => {
 
 let updateItemCommentQuery = (id, comment) =>
     `UPDATE items
-    SET comment = '${comment}'
+    SET found_comment = '${comment}'
     WHERE items.id = '${id}';
     `;
 
@@ -60,10 +69,23 @@ let updateItemComment = (req, res) => {
     .then(() => res.end())
 };
 
+let addNewHintQuery = (itemId, hint) =>
+    `INSERT INTO hints (item_id, hint)
+    VALUES (${itemId}, '${hint}');`;
+
+let addHints = (req, res) => {
+    req.body.hints.forEach(hint => {
+        db.query(addNewHintQuery(req.body.itemId, hint.hint))
+        .then(() => res.end())
+    })
+};
+
 server.post('/items', addNewItem);
+server.post('/hints', addHints);
 server.get('/items', getAllItems);
 server.get('/items/:id', getOneItem);
-server.put('/items/:id', updateItemFoundStatus);
+server.get('/codes/:id', getItemByCode);
+server.put('/items/:id/found', updateItemFoundStatus);
 server.put('/items/:id/comment', updateItemComment);
 
 server.listen(5000);

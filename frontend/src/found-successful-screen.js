@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
+import ItemDescriptionButton from './item-description-button';
 import updateCommentFetch from './found-successful-screen/update-comment-fetch';
 import ItemDescriptionButton from './item-description-button';
 import './stylesheets/add-item-screen.css';
@@ -12,7 +13,8 @@ class FoundSuccessfulScreen extends React.Component {
         super(props);
         this.state = {
             comment: '',
-            commentSubmitted: false
+            commentSubmitted: false,
+            itemAlreadyFound: false
         };
     };
 
@@ -36,7 +38,7 @@ class FoundSuccessfulScreen extends React.Component {
                             </p>
                         </div>
                         {this.state.commentSubmitted
-                        ? <p>Comment Submitted</p>
+                        ? <p className='found-comment-thank-you'>Thank You for sharing your thoughts!!!</p>
                         :<div className='form-section-change'>
                             <div className='form-section'>
                                 <p className='form-section-title'>Share your story! (Optional)</p>
@@ -55,6 +57,9 @@ class FoundSuccessfulScreen extends React.Component {
                             </div>
                         </div>
                         }
+                        <div className='form-section'>
+                            <ItemDescriptionButton id={this.props.itemId}/>
+                        </div>
                         <div className='form-section'>
                             <div className='form-btns-container'>
                                 <Link to='/add'><button className='form-button'>Add Joy</button></Link>

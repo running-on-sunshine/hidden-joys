@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Header from './header';
 import Footer from './footer';
 import findItemFetch from './found-items-screen/find-item-fetch';
+import ItemDescriptionButton from './item-description-button';
 import './stylesheets/found-items-screen.css';
 
 class FoundItemsScreen extends React.Component {
@@ -10,14 +11,17 @@ class FoundItemsScreen extends React.Component {
         super(props);
         this.state={
             id: '',
-            message: ''
+            message: '',
+            foundCode: '',
+            alreadyFound: false
         }
     }
 
     render() {
-        let invalidId = () => {
-            this.setState({ id: '' });
-            this.setState({ message: 'Invalid id' });
+        let invalidFoundCode = () => {
+            this.setState({ foundCode: '' });
+            this.setState({alreadyFound: false});
+            this.setState({ message: 'Invalid Id' });
         };
 
         let clearMessage = () =>
@@ -31,6 +35,15 @@ class FoundItemsScreen extends React.Component {
             this.props.history.push(`/found-success`);
         };
 
+        let itemAlreadyFound = (itemId) => {
+            this.setState({alreadyFound: true});
+            this.props.dispatch({
+                type: 'UPDATE_ITEM_ID',
+                itemId: itemId
+            });
+            this.setState({foundCode: ''});
+        };
+
         return (
             <div className="full-screen">
                 <Header />
@@ -40,7 +53,7 @@ class FoundItemsScreen extends React.Component {
                             className="add-item-form"
                             onSubmit={event => {
                                 event.preventDefault();
-                                findItemFetch(this.state.id, invalidId, clearMessage, updateItemId);
+                                findItemFetch(this.state.foundCode, invalidFoundCode, clearMessage, updateItemId, itemAlreadyFound);
                         }}>
                             <p className='form-title'>Did you find some joy? <i className="far fa-smile-wink"></i></p>
                             <div className='form-section'>
@@ -54,17 +67,25 @@ class FoundItemsScreen extends React.Component {
                                         className='input-box search-id-box'
                                         required
                                         type='text'
-                                        value={this.state.id}
+                                        value={this.state.foundCode}
                                         onChange={event => {
-                                            this.setState({id: event.target.value})
+                                            this.setState({foundCode: event.target.value})
                                         }} 
                                     />
                                     <button 
                                         className='form-button search-items-button' 
                                         type="submit">Found!
                                     </button>
-                                    <p>{this.state.message}</p>
                                 </div>
+                            </div>
+                            <div className='form-section'>
+                                {this.state.alreadyFound
+                                    ? <div className='form-section'>
+                                        <p className='form-section-title'>Item Has Already Been Found!!</p>
+                                        <ItemDescriptionButton id={this.props.itemId}/>
+                                    </div>
+                                    : <p className='form-section-title'>{this.state.message}</p>
+                                }
                             </div>
                         </form>
                     </div>
@@ -76,5 +97,5 @@ class FoundItemsScreen extends React.Component {
 };
 
 export default connect(
-    state => ({ itemId: state.itemId })
+    state => ({ itemId: state.itemId, foundCode: state.foundCode })
 )(FoundItemsScreen);

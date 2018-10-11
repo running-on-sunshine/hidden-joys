@@ -1,15 +1,17 @@
 import foundItemFetch from './found-item-fetch';
 
-let findItemFetch = (id, invalidId, clearMessage, updateItemId) => {
-    fetch(process.env.REACT_APP_API_URL + '/items/' + id)
+let findItemFetch = (foundCode, invalidFoundCode, clearMessage, updateItemId, itemAlreadyFound) => {
+    fetch(`${process.env.REACT_APP_API_URL}/codes/${foundCode}`)
     .then(res => res.json())
     .then(data => {
         if (data.data === 'Error') {
-            invalidId();
+            invalidFoundCode();
         }
         else {
             clearMessage();
-            foundItemFetch(data.data, updateItemId);
+            data.data.item_found 
+            ? itemAlreadyFound(data.data.id)
+            : foundItemFetch(data.data, updateItemId);
         }
     });
 };

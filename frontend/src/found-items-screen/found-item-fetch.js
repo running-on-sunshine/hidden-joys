@@ -1,5 +1,5 @@
 let foundItemFetch = (item, updateItemId) => {
-    fetch(process.env.REACT_APP_API_URL + '/items/' + item.id, {
+    fetch(`${process.env.REACT_APP_API_URL}/items/${item.id}/found`, {
         method: 'PUT',
         body: JSON.stringify({ id: item.id, found: true }),
         headers: {
@@ -9,7 +9,6 @@ let foundItemFetch = (item, updateItemId) => {
     })
     .then(() => {
         updateItemId(item.id);
-        console.log('Database has been updated!');
     }) 
 };
 
