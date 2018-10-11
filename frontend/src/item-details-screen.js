@@ -1,8 +1,10 @@
 import React from 'react';
 import Header from './header';
 import Footer from './footer';
+import ImageLinkErrorMessage from './item-details-screen/image-link-error-message';
+import './stylesheets/item-details-screen.css';
 
-class ItemDetailScreen extends React.Component {
+class ItemDetailsScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,15 +27,24 @@ class ItemDetailScreen extends React.Component {
         return (
             <div className='full-screen'>
                 <Header />
-                <div className='screen'>
+                <div className='screen success-image-background'>
                     {this.state.item === 'Error' ? 
-                        <div>BAD URL</div> :
+                        <ImageLinkErrorMessage />:
                         <div className='form-container'>
                             <div className='add-item-form'>
-                                <h3>{`Title: ${this.state.item.title}`}</h3>
-                                <p>{`Location: Lat:${this.state.item.lat} / Lng: ${this.state.item.lng}`}</p>
-                                <p>{`Image url: ${this.state.item.image}`}</p>
-                                <p>{`Description: ${this.state.item.description}`}</p>
+                                <h3 className='form-title'>{`${this.state.item.title}`}</h3>
+                                <p className='form-text'>{`Location: Lat:${this.state.item.lat} / Lng: ${this.state.item.lng}`}</p>
+                                <div className='form-section map-detail-container'>
+                                    <div>Map goes here</div>
+                                </div>
+                                <div className='form-section image-container'>
+                                    <p className='form-text'>Image</p>
+                                    <p className='item-image'>{`${this.state.item.image}`}</p>
+                                </div>
+                                <div className='form-section hints-container'>
+                                    <p className='form-text'>Hints</p>
+                                    <p className='form-text'>{`${this.state.item.description}`}</p>
+                                </div>
                             </div> 
                         </div>
                     }
@@ -44,4 +55,4 @@ class ItemDetailScreen extends React.Component {
     }
 };
 
-export default ItemDetailScreen;
+export default ItemDetailsScreen;

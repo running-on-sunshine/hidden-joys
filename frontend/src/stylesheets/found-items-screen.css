@@ -5,8 +5,26 @@
     background-color: var(--dark-button-color);
     border: none;
     cursor: pointer;
+    margin: auto;
 }
 
 .search-id-form-section {
     display: flex;
+}
+
+.search-id-box {
+    height: 2.8rem;
+    margin: 0.8rem;
+}
+
+@media(min-width: 768px) {
+    .search-id-box {
+        height: 3.7rem;
+        width: 24rem;
+        margin: 0.7rem 1.6rem;
+    }
+    .search-items-button {
+        font-size: 1.6em;
+        padding: 0.65em 1em;
+    }
 }

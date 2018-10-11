@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
 import updateCommentFetch from './found-successful-screen/update-comment-fetch';
+import ItemDescriptionButton from './item-description-button';
 import './stylesheets/add-item-screen.css';
 
 class FoundSuccessfulScreen extends React.Component {
@@ -47,9 +48,10 @@ class FoundSuccessfulScreen extends React.Component {
                                         this.setState({comment: event.target.value})
                                     }} 
                                 />
+                                <button type='submit' className='form-button'>Submit</button>
                             </div>
                             <div className='form-section'>
-                                <button type='submit' className='form-button'>Submit</button>
+                               <ItemDescriptionButton />
                             </div>
                         </div>
                         }

@@ -4,10 +4,50 @@
     margin: auto;
 }
 
+.current-location-button {
+    background-color: var(--dark-button-color);
+    font-size: 1.2rem;
+    padding: .5em 1em;
+    border-radius: .5em;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin: .5em;
+    text-decoration: none;
+}
+
+.filter-map-buttons {
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+}
+
+.filter-button {
+    font-size: 1.2rem;
+    padding: .5em 1em;
+    border-radius: .3em;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin: .5em;
+    text-decoration: none;
+}
+
+.all-filter {
+    background-color: rgb(25, 125, 255);
+}
+
+.not-found-filter {
+    background-color: rgb(16, 168, 16);
+}
+
+.found-filter {
+    background-color: rgb(253, 60, 60);
+}
+
 .search-input-container {
     display: flex;
     justify-content: space-evenly;
-    padding: 1rem;
+    padding: 1rem 0 0 0.8rem
 }
 
 .search-box {
@@ -68,9 +108,41 @@
 }
 
 @media(min-width: 768px) {
+    .search-map-screen {
+        display: flex;
+        flex-wrap: wrap;
+    }
     .search-box {
         width: 33rem;
         font-size: 1.4rem;
+    }
+    .current-location-button {
+        font-size: 1.6rem;
+    }
+    .filter-map-btns-container {
+        display: inline-block;
+        order: 1;
+        width: 25%;
+        margin: auto;
+    }
+    .filter-map-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .filter-button {
+        font-size: 1.6rem;
+        width: 50%;
+    }
+    .map-container {
+        display: inline-block;
+        width: 60%;
+        margin: 0 auto;
+    }
+    .form-btns-container {
+        text-align: center;
+        width: 100%;
+        order: 2;
     }
 }
 

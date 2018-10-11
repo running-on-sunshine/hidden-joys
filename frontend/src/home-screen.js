@@ -2,9 +2,9 @@ import React from 'react';
 import Header from './header';
 import Footer from './footer';
 import SearchBox from './map-screen/search-box';
-import SearchButton from './search-button';
-import AddButton from './add-button';
-import FoundButton from './found-button';
+import SearchButton from './home-screen/search-button';
+import AddButton from './home-screen/add-button';
+import FoundButton from './home-screen/found-button';
 import './stylesheets/home-screen-styling.css';
 
 let HomeScreen = () =>

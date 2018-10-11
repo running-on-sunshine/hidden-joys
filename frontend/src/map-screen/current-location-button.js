@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 let CurrentLocationButton = (props) => 
     <button 
-        className='form-button'
+        className='current-location-button'
         onClick={event => {
             event.preventDefault();
             navigator.geolocation.getCurrentPosition(position => {
