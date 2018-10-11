@@ -6,7 +6,8 @@ let initialState = {
     lng: -84.3880,
     items:[],
     currentLocation: {lat:'',lng:''},
-    itemId: ''
+    itemId: '',
+    foundCode: ''
 };
 
 let store = createStore(

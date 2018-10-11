@@ -88,7 +88,6 @@
 .input-box {
     background-color: white;
     box-sizing: border-box;
-    border: 1 px solid transparent;
     width: 200px;
     border: 1px solid transparent;
     border-radius: 3px;
@@ -114,6 +113,43 @@
 
 .form-btns-container {
     display: flex;
+}
+
+.new-hint-container {
+    display: flex;
+    align-items: center;
+    height: 2.5em;
+}
+
+.fill-height {
+    height: 100%;
+}
+
+.hint-listings {
+    width: 80%;
+    margin: 1.5em;
+    border: 1px solid black;
+    border-radius: .5em;
+}
+
+.hint-listing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.hint-listing-text {
+    padding-left: 1em;
+    font-size: 1.2rem;
+}
+
+.no-hints-message {
+    font-family: var(--main-text-font);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 1em;
 }
 
 @media(min-width: 768px) {

@@ -21,7 +21,7 @@ class SubmissionSuccessfulScreen extends React.Component {
                             <p className='form-text'>Thank you very much for adding some joy into the world!</p>
                             <p className='form-text'>Your item id is:</p>
                             <div className='input-box id-box'>
-                                <p className='id-text'>{this.props.itemId}</p>
+                                <p className='id-text'>{this.props.foundCode}</p>
                             </div>
                         </div>
                         <div className='form-section'>
@@ -43,5 +43,5 @@ class SubmissionSuccessfulScreen extends React.Component {
 };  
 
 export default connect(
-    state => ({itemId: state.itemId})
+    state => ({itemId: state.itemId, foundCode: state.foundCode})
 )(SubmissionSuccessfulScreen);
