@@ -152,6 +152,17 @@
     padding-top: 1em;
 }
 
+.found-comment-thank-you {
+    font-size: 1.5rem;
+    font-family: var(--main-text-font);
+    font-weight: bold;
+    width: 60%;
+    margin: auto;
+    padding: 1em 0;
+    text-align: center;
+
+}
+
 @media(min-width: 768px) {
     .add-item-form {
         width: 500px;
