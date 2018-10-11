@@ -80,9 +80,27 @@ let addHints = (req, res) => {
     })
 };
 
+let getHiddenItemsQuery = () => `SELECT * FROM items WHERE item_found = false;`;
+
+let getHiddenItems = (req, res) => {
+    db.query(getHiddenItemsQuery())
+    .then(data => res.send({data}))
+    .catch(err => res.send({error: err}))
+};
+
+let getFoundItemsQuery = () => `SELECT * FROM items WHERE item_found = true;`;
+
+let getFoundItems = (req, res) => {
+    db.query(getFoundItemsQuery())
+    .then(data => res.send({data}))
+    .catch(err => res.send({error: err}))
+};
+
 server.post('/items', addNewItem);
 server.post('/hints', addHints);
 server.get('/items', getAllItems);
+server.get('/items/hidden', getHiddenItems);
+server.get('/items/found', getFoundItems);
 server.get('/items/:id', getOneItem);
 server.get('/codes/:id', getItemByCode);
 server.put('/items/:id/found', updateItemFoundStatus);
