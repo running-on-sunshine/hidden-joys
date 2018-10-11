@@ -17,8 +17,8 @@ class SearchMapScreen extends React.Component {
         }
     };
 
-    componentDidMount() {
-        fetch(process.env.REACT_APP_API_URL + '/items')
+    fetchRequest(route) {
+        fetch(process.env.REACT_APP_API_URL + route)
         .then(res => res.json())
         .then(items => {
             this.props.dispatch({
@@ -26,9 +26,17 @@ class SearchMapScreen extends React.Component {
                 items: items.data
             })
         });
+    }
+
+    componentDidMount() {
+        this.fetchRequest('/items')
     };
 
     render() {
+        let fetchAllItems = () => this.fetchRequest('/items');
+        let fetchHiddenItems = () => this.fetchRequest('/items/hidden');
+        let fetchFoundItems = () => this.fetchRequest('/items/found');
+
         return (
             <div className="full-screen">
                 <Header />
@@ -38,7 +46,11 @@ class SearchMapScreen extends React.Component {
                         <PlacesWithStandaloneSearchBox />
                     </div>
                     <div className='filter-map-btns-container'>
-                        <FilterMapButtons />
+                        <FilterMapButtons 
+                            fetchAllItems={fetchAllItems}
+                            fetchHiddenItems={fetchHiddenItems}
+                            fetchFoundItems={fetchFoundItems}
+                        />
                     </div>
                     <div className='map-container'>
                         <SearchMapContainer
