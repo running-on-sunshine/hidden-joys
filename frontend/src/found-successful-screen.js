@@ -50,10 +50,9 @@ class FoundSuccessfulScreen extends React.Component {
                                         this.setState({comment: event.target.value})
                                     }} 
                                 />
-                                <button type='submit' className='form-button'>Submit</button>
                             </div>
                             <div className='form-section'>
-                               <ItemDescriptionButton />
+                                <button type='submit' className='form-button'>Submit</button>
                             </div>
                         </div>
                         }
