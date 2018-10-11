@@ -13,7 +13,7 @@ server.use(cors());
 let addNewItemQuery = (itemObject) =>
     `INSERT INTO items (title, lat, lng, image, found_code)
      VALUES ('${itemObject.title}', ${itemObject.lat}, ${itemObject.lng}, 
-             '${itemObject.image}', '${itemObject.found_code}') RETURNING id;`;
+             '${itemObject.image}', '${itemObject.found_code}') RETURNING *;`;
 
 let addNewItem = (req, res) => {
     db.query(addNewItemQuery(req.body))
