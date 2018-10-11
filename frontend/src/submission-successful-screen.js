@@ -43,5 +43,5 @@ class SubmissionSuccessfulScreen extends React.Component {
 };  
 
 export default connect(
-    state => ({itemId: state.itemId})
+    state => ({itemId: state.itemId, foundCode: state.foundCode})
 )(SubmissionSuccessfulScreen);

@@ -11,14 +11,14 @@ server.use(bodyParser.json());
 server.use(cors());
 
 let addNewItemQuery = (itemObject) =>
-    `INSERT INTO items (id, title, lat, lng, image, description)
-     VALUES ('${itemObject.id}', '${itemObject.title}', ${itemObject.lat}, 
-             ${itemObject.lng}, '${itemObject.image}', '${itemObject.description}');`;
+    `INSERT INTO items (title, lat, lng, image, found_code)
+     VALUES ('${itemObject.title}', ${itemObject.lat}, ${itemObject.lng}, 
+             '${itemObject.image}', '${itemObject.found_code}') RETURNING id;`;
 
 let addNewItem = (req, res) => {
-    console.log(req.body);
     db.query(addNewItemQuery(req.body))
-    .then(() => res.end());
+    .then(data => res.send(data))
+    .catch(err => res.send(err))
 };
 
 let getAllItemsQuery = () => `SELECT * FROM items;`;
@@ -60,7 +60,19 @@ let updateItemComment = (req, res) => {
     .then(() => res.end())
 };
 
+let addNewHintQuery = (itemId, hint) =>
+    `INSERT INTO hints (item_id, hint)
+    VALUES (${itemId}, '${hint}');`;
+
+let addHints = (req, res) => {
+    req.body.hints.forEach(hint => {
+        db.query(addNewHintQuery(req.body.itemId, hint.hint))
+        .then(() => res.end())
+    })
+};
+
 server.post('/items', addNewItem);
+server.post('/hints', addHints);
 server.get('/items', getAllItems);
 server.get('/items/:id', getOneItem);
 server.put('/items/:id', updateItemFoundStatus);

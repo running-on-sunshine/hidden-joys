@@ -4,16 +4,20 @@ import Header from './header';
 import Footer from './footer';
 import SearchBox from './map-screen/search-box';
 import addItemFetch from './add-item-screen/add-item-fetch';
+import NewHintForm from './add-item-screen/new-hint';
+import HintListings from './add-item-screen/hint-listing';
 import './stylesheets/add-item-screen.css';
 
 class AddItemScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            currentHint: '',
             title: '',
             location:'current',
             image: 'https://source.unsplash.com/_0aKQa9gr4s/',
-            description: ''
+            hints: [],
+            showNoHintsMessage: false
         }
     };
 
@@ -22,15 +26,51 @@ class AddItemScreen extends React.Component {
             type: 'UPDATE_ITEM_ID',
             itemId: ''
         });
+        this.props.dispatch({
+            type: 'UPDATE_FOUND_CODE',
+            foundCode: ''
+        });
     };
 
     render() {
-        let updateItemId = (id) => {
+        let updateStoreItemId = (id) => {
             this.props.dispatch({
                 type: 'UPDATE_ITEM_ID',
                 itemId: id
             });
+        };
+
+        let updateStoreFoundCode = (code) => {
+            this.props.dispatch({
+                type: 'UPDATE_FOUND_CODE',
+                foundCode: code
+            });
+        };
+
+        let updateStoreIdAndFoundCode = (itemId, code) => {
+            updateStoreItemId(itemId);
+            updateStoreFoundCode(code);
             this.props.history.push(`/submit-success`);
+        };
+
+        let addNewHint = (hint) => {
+            let newHints = [...this.state.hints, hint]
+            this.setState({hints: newHints}) 
+        };
+
+        let removeHint = (oldHint) => {
+            let newHints = this.state.hints.filter(hint => hint.id !== oldHint.id);
+            this.setState({hints: newHints});
+        };
+
+        let hideNoHintsMessage = () => this.setState({showNoHintsMessage: false});
+
+        let submitForm = () => {
+            if (this.state.hints.length === 0 ) {
+                this.setState({showNoHintsMessage: true});
+            } else {
+                addItemFetch(this.state, this.props, updateStoreIdAndFoundCode);
+            }
         };
 
         return (
@@ -41,7 +81,7 @@ class AddItemScreen extends React.Component {
                     className='add-item-form'
                     onSubmit={event => {
                         event.preventDefault();
-                        addItemFetch(this.state, this.props, updateItemId);
+                        submitForm();
                     }}>
                         <p className='form-title'>Hide New Item</p>
                         <div className='form-section'>
@@ -70,18 +110,24 @@ class AddItemScreen extends React.Component {
                             {this.state.location === 'current' ? <p></p> : <SearchBox />}
                         </div>
                         <div className='form-section'>
-                        <p className='form-section-title'>Image</p>
-                            <input className='input-box' type="file" />
-                        </div>
-                        <div className='form-section'>
-                            <p className='form-section-title'>Description</p>
-                            <textarea 
-                                className='input-box description-box'
-                                value={this.state.description}
+                            <p className='form-section-title'>Image/url</p>
+                            <input 
+                                className='input-box'
+                                type='text'
+                                required
+                                value={this.state.image}
                                 onChange={event => {
-                                    this.setState({description: event.target.value})
+                                    this.setState({image: event.target.value})
                                 }}
                             />
+                        </div>
+                        <div className='form-section'>
+                            <p className='form-section-title'>Hints</p>
+                            <NewHintForm addNewHint={addNewHint} hideNoHintsMessage={hideNoHintsMessage}/>
+                            {this.state.showNoHintsMessage 
+                                ? <p className='no-hints-message'>Please Provide a Hint!!!</p>
+                                : <HintListings hints={this.state.hints} removeHint={removeHint}/>
+                            }
                         </div>
                         <div className='form-section'>
                             <button type='submit' className='form-button'>Submit</button>
