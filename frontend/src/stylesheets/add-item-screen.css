@@ -5,10 +5,10 @@
 }
 
 .success-image-background {
-    background-image: url('https://source.unsplash.com/Wmuu76rFl0Y/700x500');
+    background-image: url('https://source.unsplash.com/DbwYNr8RPbg/1200x1000');
     /* background-repeat: no-repeat; */
     background-size: cover;
-    /* background-position: center; */
+    background-position: center;
 }
 
 .form-title {
@@ -23,8 +23,8 @@
 }
 
 .add-item-form {
-    width: 300px;
-    /* height: max-content; */
+    width: 30em;
+    height: max-content;
     margin: 1.5em auto;
     align-items: center;
     border: 2px solid var(--dark-button-color);
@@ -36,14 +36,14 @@
 .form-section-title {
     font-family: var(--title-font);
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
     margin: .5em;
 }
 
 .form-text { 
     font-family: var(--main-text-font);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: center;
     margin: .5em;
     letter-spacing: .05rem;
@@ -112,7 +112,7 @@
 }
 
 .form-btns-container {
-    display: flex;
+    text-align: center;
 }
 
 .new-hint-container {

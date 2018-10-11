@@ -5,6 +5,7 @@ import Header from './header';
 import Footer from './footer';
 import ItemDescriptionButton from './item-description-button';
 import updateCommentFetch from './found-successful-screen/update-comment-fetch';
+import ItemDescriptionButton from './item-description-button';
 import './stylesheets/add-item-screen.css';
 
 class FoundSuccessfulScreen extends React.Component {

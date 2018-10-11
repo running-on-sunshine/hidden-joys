@@ -56,13 +56,16 @@ class FoundItemsScreen extends React.Component {
                                 findItemFetch(this.state.foundCode, invalidFoundCode, clearMessage, updateItemId, itemAlreadyFound);
                         }}>
                             <p className='form-title'>Did you find some joy? <i className="far fa-smile-wink"></i></p>
-                            <p className='form-text'>Wooo! That's super awesome!</p>
-                            <p className='form-text'>To mark your piece of joy as found, find the id attached to your joy and enter it below.</p>
+                            <div className='form-section'>
+                                <p className='form-text'>Wooo! That's super awesome!</p>
+                                <p className='form-text'>To mark your piece of joy as found, find the id attached to your joy and enter it below.</p>
+                            </div>
                             <div className='form-section'>
                                 <p className='form-section-title'>Enter joy id:</p>
                                 <div className='search-id-form-section'>
                                     <input 
-                                        className='input-box id-box'
+                                        className='input-box search-id-box'
+                                        required
                                         type='text'
                                         value={this.state.foundCode}
                                         onChange={event => {

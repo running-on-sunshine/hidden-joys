@@ -32,7 +32,7 @@ class SearchMapScreen extends React.Component {
         return (
             <div className="full-screen">
                 <Header />
-                <div className="screen">
+                <div className="screen search-map-screen">
                     <div className='search-input-container'>
                         <CurrentLocationButton />
                         <PlacesWithStandaloneSearchBox />
