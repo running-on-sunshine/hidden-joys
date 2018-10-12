@@ -96,12 +96,22 @@ let getFoundItems = (req, res) => {
     .catch(err => res.send({error: err}))
 };
 
+let getItemHintsQuery = (itemId) => 
+    `SELECT * FROM hints WHERE item_id = ${itemId};`;
+
+let getItemHints = (req, res) => {
+    db.query(getItemHintsQuery(req.params.id))
+    .then(data => res.send({data}))
+    .catch(err => res.send({data: 'Error', error: err}))
+};
+
 server.post('/items', addNewItem);
 server.post('/hints', addHints);
 server.get('/items', getAllItems);
 server.get('/items/hidden', getHiddenItems);
 server.get('/items/found', getFoundItems);
 server.get('/items/:id', getOneItem);
+server.get('/items/:id/hints', getItemHints);
 server.get('/codes/:id', getItemByCode);
 server.put('/items/:id/found', updateItemFoundStatus);
 server.put('/items/:id/comment', updateItemComment);
