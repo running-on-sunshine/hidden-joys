@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 let AddButton = () =>
     <Link to="/add">
-        <button className="nav-button">
+        <button className="navigation-button">
             <i className="fas fa-plus circle add-icon"></i> Add Joy
         </button>
     </Link>

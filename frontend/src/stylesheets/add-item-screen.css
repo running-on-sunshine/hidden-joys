@@ -1,7 +1,7 @@
 .form-screen {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .success-image-background {
