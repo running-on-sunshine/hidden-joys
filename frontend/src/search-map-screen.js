@@ -40,12 +40,24 @@ class SearchMapScreen extends React.Component {
         return (
             <div className="full-screen">
                 <Header />
-                <div className="screen search-map-screen">
-                    <div className='search-input-container'>
+                <div className="screen center-div">
+                    <div className='search-map-screen-container'>
+                        <div className='search-map-screen-container-section'>
+                            <p className='map-screen-section-title'>Search By Location</p>
+                            <div className='center-div map-search-btns-container'>
+                                <CurrentLocationButton />
+                                <PlacesWithStandaloneSearchBox />
+                            </div>
+                        </div>
+                        <div className='search-map-screen-container-section'></div>
+                        <div className='search-map-screen-container-section'></div>
+                        <div className='search-map-screen-container-section'></div>
+                    </div>
+                    {/* <div className='search-input-container'>
                         <CurrentLocationButton />
                         <PlacesWithStandaloneSearchBox />
-                    </div>
-                    <div className='filter-map-btns-container'>
+                    </div> */}
+                    {/* <div className='filter-map-btns-container'>
                         <FilterMapButtons 
                             fetchAllItems={fetchAllItems}
                             fetchHiddenItems={fetchHiddenItems}
@@ -60,7 +72,7 @@ class SearchMapScreen extends React.Component {
                     </div>
                     <div className='form-btns-container'>
                         <Link to='/add'><button className='form-button'>Add Joy</button></Link>
-                    </div>
+                    </div> */}
                 </div>
                 <Footer />
             </div>

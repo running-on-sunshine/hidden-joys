@@ -7,6 +7,7 @@ html, body {
     --main-text-font: 'Lato', sans-serif;
     --dark-button-color: rgb(255, 149, 11);
     --light-button-color: papayawhip;
+    --box-shadow: 0 2px 6px rgba(255, 149, 11, 0.5);
 }
 * {
     box-sizing: border-box;
