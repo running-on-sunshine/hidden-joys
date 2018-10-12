@@ -38,7 +38,7 @@ hr {
 }
 .item-detail-form-body {
     height: 70%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .item-detail-body-section {
