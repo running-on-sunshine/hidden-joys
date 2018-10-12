@@ -27,7 +27,7 @@ class PlayDropdownMenu extends React.Component {
 
     render() {
         return (
-            <div className="play-dropdown-menu nav-item">
+            <div className="play-dropdown-menu header-navigation-item">
                 <div onClick={this.showMenu}>Let's play! <i className="fas fa-angle-down"></i>
                 </div>
 
