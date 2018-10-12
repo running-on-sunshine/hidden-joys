@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './header';
 import Footer from './footer';
 import ImageLinkErrorMessage from './item-details-screen/image-link-error-message';
+import ItemDetailScreenMapContainer from './item-details-screen/item-detail-map';
+import ItemDetailsForm from './item-details-screen/item-details-form';
 import './stylesheets/item-details-screen.css';
 
 class ItemDetailsScreen extends React.Component {
@@ -9,7 +11,8 @@ class ItemDetailsScreen extends React.Component {
         super(props);
         this.state = {
             urlId: '',
-            item: ''
+            item: '',
+            hints: []
         };
     };
 
@@ -20,6 +23,9 @@ class ItemDetailsScreen extends React.Component {
         .then(data => {
             this.setState({item: data.data});
             this.setState({urlId: urlId});
+            fetch(`${process.env.REACT_APP_API_URL}/items/${urlId}/hints`)
+            .then(res => res.json())
+            .then(data => this.setState({hints: data.data}))
         })
     };
 
@@ -27,25 +33,14 @@ class ItemDetailsScreen extends React.Component {
         return (
             <div className='full-screen'>
                 <Header />
-                <div className='screen success-image-background'>
+                <div className='screen success-image-background center-div'>
                     {this.state.item === 'Error' ? 
                         <ImageLinkErrorMessage />:
-                        <div className='form-container'>
-                            <div className='add-item-form'>
-                                <h3 className='form-title'>{`${this.state.item.title}`}</h3>
-                                <p className='form-text'>{`Location: Lat:${this.state.item.lat} / Lng: ${this.state.item.lng}`}</p>
-                                <div className='form-section map-detail-container'>
-                                    <div>Map goes here</div>
-                                </div>
-                                <div className='form-section image-container'>
-                                    <p className='form-text'>Image</p>
-                                    <p className='item-image'>{`${this.state.item.image}`}</p>
-                                </div>
-                                <div className='form-section hints-container'>
-                                    <p className='form-text'>Hints</p>
-                                    <p className='form-text'>{`${this.state.item.description}`}</p>
-                                </div>
-                            </div> 
+                        <div className='item-details-container'>
+                            <div className='desktop-map-display'>
+                                <ItemDetailScreenMapContainer lat={this.state.item.lat} lng={this.state.item.lng}/>
+                            </div>
+                            <ItemDetailsForm item={this.state.item} hints={this.state.hints}/>
                         </div>
                     }
                 </div>
