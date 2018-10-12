@@ -5,7 +5,7 @@ import SearchBox from './map-screen/search-box';
 import SearchButton from './home-screen/search-button';
 import AddButton from './home-screen/add-button';
 import FoundButton from './home-screen/found-button';
-import './stylesheets/home-screen-styling.css';
+import './stylesheets/home-screen.css';
 
 let HomeScreen = () =>
     <div className="full-screen">
@@ -16,7 +16,7 @@ let HomeScreen = () =>
                 <SearchBox />
                 <SearchButton />
             </div>
-            <div className="buttons-container">
+            <div className="navigation-btns-container">
                 <AddButton />
                 <FoundButton />
             </div>
