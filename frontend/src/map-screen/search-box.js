@@ -44,7 +44,7 @@ const PlacesWithStandaloneSearchBox = compose(
     >
       <input className='search-box home-search-box'
         type="text"
-        placeholder="Search Map"
+        placeholder="Search Places"
       />
     </StandaloneSearchBox>
   </div>

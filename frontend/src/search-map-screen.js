@@ -40,26 +40,50 @@ class SearchMapScreen extends React.Component {
         return (
             <div className="full-screen">
                 <Header />
-                <div className="screen search-map-screen">
-                    <div className='search-input-container'>
-                        <CurrentLocationButton />
-                        <PlacesWithStandaloneSearchBox />
-                    </div>
-                    <div className='filter-map-btns-container'>
-                        <FilterMapButtons 
-                            fetchAllItems={fetchAllItems}
-                            fetchHiddenItems={fetchHiddenItems}
-                            fetchFoundItems={fetchFoundItems}
-                        />
-                    </div>
-                    <div className='map-container'>
-                        <SearchMapContainer
-                            location={ {lat: this.props.lat, lng: this.props.lng } }
-                            items={this.props.items}
-                        />
-                    </div>
-                    <div className='form-btns-container'>
-                        <Link to='/add'><button className='form-button'>Add Joy</button></Link>
+                <div className="screen center-div">
+                    <div className='search-map-screen-container'>
+                        <div className='desktop-map'>
+                            <div className='search-map-container desktop-map-container'>
+                                <SearchMapContainer
+                                    location={ {lat: this.props.lat, lng: this.props.lng } }
+                                    items={this.props.items}
+                                />
+                            </div>
+                        </div>
+                        <div className='search-map-screen-main'>
+                            <div className='search-map-screen-container-section'>
+                                <p className='map-screen-section-title'>Search By Location</p>
+                                <div className='map-search-btns-container'>
+                                    <CurrentLocationButton />
+                                    <p className='separator-text'>OR</p>
+                                    <div className='map-search-box-container'>
+                                        <PlacesWithStandaloneSearchBox />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='search-map-screen-container-section'>
+                                <p className='map-screen-section-title'>Filter By Items</p>
+                                <FilterMapButtons 
+                                    fetchAllItems={fetchAllItems}
+                                    fetchHiddenItems={fetchHiddenItems}
+                                    fetchFoundItems={fetchFoundItems}
+                                />
+                            </div>
+                            <div className='search-map-screen-container-section map-section'>
+                                <div className='search-map-container'>
+                                    <SearchMapContainer
+                                        location={ {lat: this.props.lat, lng: this.props.lng } }
+                                        items={this.props.items}
+                                    />
+                                </div>
+                            </div>
+                            <div className='search-map-screen-container-section'>
+                                <div className='form-btns-container'>
+                                    <Link to='/add'><button className='search-form-button'>Add Joy</button></Link>
+                                    <Link to='/found'><button className='search-form-button'>Found Joy</button></Link>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <Footer />

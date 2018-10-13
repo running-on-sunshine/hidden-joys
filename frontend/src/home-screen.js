@@ -13,7 +13,9 @@ let HomeScreen = () =>
         <div className="screen home-screen">
             <h1 className="main-title">Hidden Joys</h1>
             <div className="search-container">
-                <SearchBox />
+                <div className='home-search-box-wrapper'>
+                    <SearchBox />
+                </div>
                 <SearchButton />
             </div>
             <div className="navigation-btns-container">
