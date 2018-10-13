@@ -16,14 +16,17 @@
 .search-container {
     display: flex;
     align-items: center;
+    height: 3.5em;
 }
 
-.search-box-container {
-    margin: 1.5em;
+.home-search-box-wrapper {
+    width: 25em;
+    height: 100%;
+    margin-right: 1em;
 }
 
 .home-search-box {
-    height: 2.5em;
+    height: 100%;
 }
 
 .search-button {
@@ -33,6 +36,7 @@
     background-color: var(--dark-button-color);
     border: none;
     cursor: pointer;
+    height: 100%;
 }
 
 .navigation-btns-container {
@@ -68,10 +72,7 @@
 
     .search-container {
         margin-bottom: 1em;
-    }
-
-    .home-search-box {
-        height: 3em;
+        height: 4.5em;
     }
 
     .search-button {
@@ -82,5 +83,9 @@
     .navigation-button {
         padding: 1.5em;
         font-size: 1.5em;
+    }
+
+    .home-search-box-wrapper {
+        width: 40em;
     }
 }

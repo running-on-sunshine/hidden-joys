@@ -18,6 +18,10 @@ html, body {
     height: 100%;
 }
 
+.max-height {
+    height: 100%;
+}
+
 .header, .footer {
     width: 100%;
     margin: 0;
