@@ -4,9 +4,8 @@ import '../stylesheets/map-styling.css';
 
 let ItemInfoWindowContent = (props) => {
     let styles = {
-        background: `url(https://source.unsplash.com/_0aKQa9gr4s/)`, //placeholder image
-        // background: `url(${props.item.image})`,
-        backgroundSize: 'contain'
+        background: `url(${props.item.image})`,
+        backgroundSize: 'cover'
     };
 
     return (
