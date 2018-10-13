@@ -10,9 +10,16 @@
     background-color: var(--light-button-color);
     border: 2px solid var(--dark-button-color);
     border-radius: 1em;
-    overflow-y: scroll;
+    display: flex;
+}
+
+.search-map-screen-main {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
 }
 
 .search-map-screen-container-section {
@@ -183,11 +190,10 @@
 @media(min-width: 768px) {
     .search-map-screen-container {
         width: 95%;
-        flex-direction: row;
         padding: 1em;
     }
-    .search-map-screen-container-section {
-        width: 90%;
+    .search-map-screen-container-section{
+        width: 85%;
     }
     .desktop-map {
         display: flex;
@@ -200,11 +206,8 @@
         height: 80%;
     }
     .search-map-screen-main {
-        width: 40%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        width: 50%;
+        padding: 2em 0;
     }
     .current-location-button, .search-box {
         font-size: 1.5rem;
@@ -220,6 +223,7 @@
         border: 1px solid black;
         border-radius: .3em;
         padding: 2em;
+        width: 100%;
         box-shadow: 0 .2rem .6rem rgba(0, 0, 0, 0.3);
     }
     .separator-text {
@@ -228,8 +232,9 @@
     }
     .map-search-box-container {
         width: 90%;
+        height: 4em;
     }
-    .current-location-button, .filter-button {
+    .current-location-button {
         width: 60%;
     }
     .filter-button {
@@ -237,11 +242,12 @@
     }
     .filter-map-buttons {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
         border: 1px solid black;
         border-radius: .3em;
         padding: 2em;
+        width: 100%;
         box-shadow: 0 .2rem .6rem rgba(0, 0, 0, 0.3);
         font-size: 1.5em;
     }
