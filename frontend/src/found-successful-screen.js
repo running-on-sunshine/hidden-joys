@@ -37,7 +37,7 @@ class FoundSuccessfulScreen extends React.Component {
                             </p>
                         </div>
                         {this.state.commentSubmitted
-                        ? <p className='found-comment-thank-you'>Thank You for sharing your thoughts!!!</p>
+                        ? <p className='found-comment-thank-you'>Thank you for sharing your thoughts!!!</p>
                         :<div className='form-section-change'>
                             <div className='form-section'>
                                 <p className='form-section-title'>Share your story! (Optional)</p>
