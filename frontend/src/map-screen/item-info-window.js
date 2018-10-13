@@ -16,7 +16,7 @@ let ItemInfoWindowContent = (props) => {
             </div>
             <div className='info-window-section'>
                 <p className='info-window-title'>{props.item.title}</p>
-                <p className='info-window-status'>{props.item.found ? 'Found' : 'Not Found'}</p>
+                <p className='info-window-status'>Status: {props.item.item_found ? 'Found' : 'Not Found'}</p>
                 <Link to={`/items/${props.item.id}`} >
                     <p className='info-window-link'>Item Details</p>
                 </Link>
