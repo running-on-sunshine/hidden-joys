@@ -10,8 +10,18 @@ class PlayDropdownMenu extends React.Component {
         }
     }
 
-    render() {
-        let showMenu = () => this.setState({ showMenu: true });
+    render() {   
+        let showMenu = () => {
+            this.setState({ showMenu: true }, () => {
+                document.addEventListener('click', closeMenu);
+            });
+        };
+
+        let closeMenu = () => {
+            this.setState({ showMenu: false }, () => {
+                document.removeEventListener('click', closeMenu);
+            });
+        };
 
         return (
             <div className='play-dropdown-menu header-navigation-item'>
