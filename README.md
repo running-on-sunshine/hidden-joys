@@ -8,7 +8,7 @@
 
 ## Features  
 - USERS CAN HIDE NEW ITEMS:  
-    - When a user wants to hide a new item, they fill out a form which includes an item title, location, image and description. The user can either use their current location or search for an address using the Google Places Library. The description field allows the user to give a little more info to help others find the item they hid.  
+    - When a user wants to hide a new item, they fill out a form which includes an item title, location, image and list of hints. The user can either use their current location or search for an address using the Google Places Library. The user can also add new hints by typing the hint in the input box and clicking the add button. This will then display the newly entered hint in a listing below the input box. After the user has entered a hint they will have the ability to remove the hint from the list by clicking the remove button. Also, the user will not be able to submit a new item form without including at least one hint. If they try to submit a form without any hints they will get a message asking them to include a hint.  
 
         After the user submits the form, they are directed to a screen thanking them for their submission. They are also given an id to include with their item so whoever finds the item can report that they found it. 
 
