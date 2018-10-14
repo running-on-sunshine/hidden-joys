@@ -24,14 +24,14 @@ class FoundSuccessfulScreen extends React.Component {
         return (
             <div className="full-screen">
                 <Header />
-                <div className="screen form-screen success-image-background">
+                <div className="screen center-div success-image-background">
                     <form 
                         className='add-item-form'
                         onSubmit={event => {
                             event.preventDefault();
                             updateCommentFetch(this.state.comment, this.props.itemId, updateCommentSubmitted);
                         }}>
-                        <p className='form-title'>Joy Found!!!</p>
+                        <p className='form-title found-title'>Joy Found!!!</p>
                         <div className='form-section'>
                             <p className='form-text'>Yay! You found some joy! Thank you for being awesomely you! <i className="far fa-grin-beam" />
                             </p>

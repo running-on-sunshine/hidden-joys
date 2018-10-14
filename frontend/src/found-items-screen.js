@@ -47,15 +47,15 @@ class FoundItemsScreen extends React.Component {
         return (
             <div className="full-screen">
                 <Header />
-                <div className="screen found-items-image-background">
-                    <div className='form-container'>
+                <div className="screen success-image-background">
+                    <div className='form-container center-div'>
                         <form 
                             className="found-items-form"
                             onSubmit={event => {
                                 event.preventDefault();
                                 findItemFetch(this.state.foundCode, invalidFoundCode, clearMessage, updateItemId, itemAlreadyFound);
                         }}>
-                            <p className='form-title'>Did you find some joy? <i className="far fa-smile-wink"></i></p>
+                            <p className='form-title found-title'>Did you find some joy? <i className="far fa-smile-wink"></i></p>
                             <div className='form-section'>
                                 <p className='form-text'>Wooo! That's super awesome!</p>
                                 <p className='form-text'>To mark your piece of joy as found, find the id attached to your joy and enter it below.</p>
