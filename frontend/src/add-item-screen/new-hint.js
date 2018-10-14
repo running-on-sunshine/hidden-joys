@@ -14,6 +14,7 @@ class NewHintForm extends React.Component {
                 <input
                     className='input-box fill-height'
                     type='text'
+                    maxLength='50'
                     value={this.state.hint}
                     onChange={event => {
                         this.setState({hint: event.target.value})

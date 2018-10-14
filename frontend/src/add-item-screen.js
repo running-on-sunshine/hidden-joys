@@ -76,61 +76,73 @@ class AddItemScreen extends React.Component {
         return (
             <div className="full-screen">
                 <Header />
-                <div className='screen form-screen success-image-background'>
+                <div className='screen center-div success-image-background'>
                     <form 
                     className='add-item-form'
                     onSubmit={event => {
                         event.preventDefault();
                         submitForm();
                     }}>
-                        <p className='form-title'>Hide New Item</p>
-                        <div className='form-section'>
-                            <p className='form-section-title'>Title</p>
-                            <input 
-                                className='input-box'
-                                type='text'
-                                required
-                                value={this.state.title}
-                                onChange={event => {
-                                    this.setState({title: event.target.value})
-                                }}
-                            />
+                        <div className='form-header center-div'>
+                            <p className='form-title'>Hide New Item</p>
                         </div>
-                        <div className='form-section'>
-                            <p className='form-section-title'>Location</p>
-                            <select 
-                                className='input-box'
-                                value={this.state.location}
-                                onChange={event => {
-                                    this.setState({location:event.target.value})
-                                }}>
-                                <option value='current'>Use Current Location</option>
-                                <option value='search'>Search By Location</option>
-                            </select>
-                            {this.state.location === 'current' ? <p></p> : <SearchBox />}
+                        <hr/>
+                        <div className='form-body'>
+                            <div className='form-section'>
+                                <p className='form-section-title'>Title</p>
+                                <input 
+                                    className='input-box'
+                                    type='text'
+                                    required
+                                    maxLength='50'
+                                    value={this.state.title}
+                                    onChange={event => {
+                                        this.setState({title: event.target.value})
+                                    }}
+                                />
+                            </div>
+                            <div className='form-section'>
+                                <p className='form-section-title'>Location</p>
+                                <select 
+                                    className='input-box'
+                                    value={this.state.location}
+                                    onChange={event => {
+                                        this.setState({location:event.target.value})
+                                    }}>
+                                    <option value='current'>Use Current Location</option>
+                                    <option value='search'>Search By Location</option>
+                                </select>
+                                {this.state.location === 'current' ? <p></p> : 
+                                <div className='add-item-search-box-wrapper'>
+                                    <p className='form-text'>Enter Location:</p>
+                                    <SearchBox />
+                                </div>}
+                            </div>
+                            <div className='form-section'>
+                                <p className='form-section-title'>Image/url</p>
+                                <input 
+                                    className='input-box'
+                                    type='text'
+                                    required
+                                    maxLength='155'
+                                    value={this.state.image}
+                                    onChange={event => {
+                                        this.setState({image: event.target.value})
+                                    }}
+                                />
+                            </div>
+                            <div className='form-section'>
+                                <p className='form-section-title'>Hints</p>
+                                <NewHintForm addNewHint={addNewHint} hideNoHintsMessage={hideNoHintsMessage}/>
+                                {this.state.showNoHintsMessage 
+                                    ? <p className='no-hints-message'>Please Provide a Hint!!!</p>
+                                    : <HintListings hints={this.state.hints} removeHint={removeHint}/>
+                                }
+                            </div>
                         </div>
-                        <div className='form-section'>
-                            <p className='form-section-title'>Image/url</p>
-                            <input 
-                                className='input-box'
-                                type='text'
-                                required
-                                value={this.state.image}
-                                onChange={event => {
-                                    this.setState({image: event.target.value})
-                                }}
-                            />
-                        </div>
-                        <div className='form-section'>
-                            <p className='form-section-title'>Hints</p>
-                            <NewHintForm addNewHint={addNewHint} hideNoHintsMessage={hideNoHintsMessage}/>
-                            {this.state.showNoHintsMessage 
-                                ? <p className='no-hints-message'>Please Provide a Hint!!!</p>
-                                : <HintListings hints={this.state.hints} removeHint={removeHint}/>
-                            }
-                        </div>
-                        <div className='form-section'>
-                            <button type='submit' className='form-button'>Submit</button>
+                        <hr/>
+                        <div className='form-footer center-div'>
+                            <button type='submit' className='submit-button'>Submit</button>
                         </div>
                     </form>
                 </div>
