@@ -5,9 +5,9 @@ import Footer from './footer';
 let AboutScreen = () =>
     <div className='full-screen'>
         <Header />
-            <div className='screen form-screen success-image-background'>
+            <div className='screen center-div success-image-background'>
                 <div className='add-item-form'>
-                    <p className='form-title'>About</p>
+                    <p className='form-title found-title'>About</p>
                 </div>
             </div>
         <Footer />
