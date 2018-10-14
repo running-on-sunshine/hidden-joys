@@ -44,18 +44,18 @@
 }
 
 .current-location-button {
-    height: 2.5em;
+    width: 6.5em;
     background-color: var(--dark-button-color);
     color: white;
     font-size: 1.3rem;
-    padding: .5em;
+    padding: 0.5em;
     border: 1px solid transparent;
     border-radius: 3px;
     font-weight: bold;
 }
 
 .separator-text {
-    margin: 0 .5em;
+    margin: 0 0.8em;
     font-family: var(--main-text-font);
     font-size: 1.2rem;
 }
@@ -74,7 +74,7 @@
     box-sizing: border-box;
     width: 100%;
     border: 1px solid transparent;
-    border-radius: 3px;
+    border-radius: 0.3em;
     box-shadow: var(--box-shadow);
     outline: none;
     padding: 2px 10px;
@@ -94,17 +94,22 @@
 
 .filter-button {
     font-size: 1.3rem;
-    padding: .5em 1em;
-    border-radius: .3em;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
     border: none;
     color: white;
     font-weight: bold;
-    margin: .5em;
+    margin: 0.5em;
     text-decoration: none;
 }
 
 .all-filter {
     background-color: rgb(25, 125, 255);
+}
+
+.all-filter:hover {
+    background-color: rgb(9, 111, 245);
+    color: black;
 }
 
 .not-found-filter {
@@ -123,7 +128,6 @@
     background-color: var(--dark-button-color);
     text-decoration: none;
     font-weight: bold;
-    font-family: var(--main-text-font);
     border: none;
     font-weight: bold;
     margin: .5em;
@@ -166,6 +170,9 @@
 }
 
 @media(min-width: 360px) {
+    .filter-button {
+        padding: 0.6em 1.2em;
+    }
     .info-window-image {
         width: 70px;
         height: 70px;
@@ -212,6 +219,10 @@
     .current-location-button, .search-box {
         font-size: 1.5rem;
     }
+    .current-location-button {
+        width: 60%;
+        padding: 0.8em;
+    }
     .map-search-box-container {
         height: 3.5em;
     }
@@ -222,7 +233,7 @@
         flex-direction: column;
         border: 1px solid black;
         border-radius: .3em;
-        padding: 2em;
+        padding: 2.3em;
         width: 100%;
         box-shadow: 0 .2rem .6rem rgba(0, 0, 0, 0.3);
     }
@@ -234,19 +245,17 @@
         width: 90%;
         height: 4em;
     }
-    .current-location-button {
-        width: 60%;
-    }
     .filter-button {
         font-size: 1.5rem;
+        /* padding: 0.8em 1.7em; */
     }
     .filter-map-buttons {
         display: flex;
         justify-content: center;
         align-items: center;
         border: 1px solid black;
-        border-radius: .3em;
-        padding: 2em;
+        border-radius: 0.3em;
+        padding: 1.5em;
         width: 100%;
         box-shadow: 0 .2rem .6rem rgba(0, 0, 0, 0.3);
         font-size: 1.5em;

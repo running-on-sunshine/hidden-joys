@@ -47,10 +47,10 @@ class FoundItemsScreen extends React.Component {
         return (
             <div className="full-screen">
                 <Header />
-                <div className="screen success-image-background">
+                <div className="screen found-items-image-background">
                     <div className='form-container'>
                         <form 
-                            className="add-item-form"
+                            className="found-items-form"
                             onSubmit={event => {
                                 event.preventDefault();
                                 findItemFetch(this.state.foundCode, invalidFoundCode, clearMessage, updateItemId, itemAlreadyFound);
@@ -81,7 +81,7 @@ class FoundItemsScreen extends React.Component {
                             <div className='form-section'>
                                 {this.state.alreadyFound
                                     ? <div className='form-section'>
-                                        <p className='form-section-title'>Item Has Already Been Found!!</p>
+                                        <p className='form-section-title'>Item has already been found!!</p>
                                         <ItemDescriptionButton id={this.props.itemId}/>
                                     </div>
                                     : <p className='form-section-title'>{this.state.message}</p>
