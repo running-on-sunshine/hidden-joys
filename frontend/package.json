@@ -20,7 +20,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://clinturbin.github.io/hidden-joys-build/",
+  // "homepage": "https://clinturbin.github.io/hidden-joys-build/",
+  "homepage": "http://hidden-joys.fun/",
   "eslintConfig": {
     "extends": "react-app"
   },
