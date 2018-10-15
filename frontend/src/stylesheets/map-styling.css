@@ -43,8 +43,12 @@
     justify-content: flex-end;
 }
 
+.icon {
+    margin: 0.2rem;
+}
+
 .current-location-button {
-    width: 6.5em;
+    width: 6.7em;
     background-color: var(--dark-button-color);
     color: white;
     font-size: 1.3rem;

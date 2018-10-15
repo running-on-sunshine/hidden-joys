@@ -60,7 +60,7 @@ class FoundItemsScreen extends React.Component {
                                 <p className='form-text'>Wooo! That's super awesome!</p>
                                 <p className='form-text'>To mark your piece of joy as found, find the id attached to your joy and enter it below.</p>
                             </div>
-                            <div className='form-section'>
+                            <div className='found-items-form-section'>
                                 <p className='form-section-title'>Enter joy id:</p>
                                 <div className='search-id-form-section'>
                                     <input 

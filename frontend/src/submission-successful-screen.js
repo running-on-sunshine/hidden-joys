@@ -5,6 +5,7 @@ import Header from './header';
 import Footer from './footer';
 import ItemDescriptionButton from './item-description-button';
 import './stylesheets/add-item-screen.css';
+import './stylesheets/submission-successful-screen.css';
 
 class SubmissionSuccessfulScreen extends React.Component {
     render() {
@@ -16,20 +17,20 @@ class SubmissionSuccessfulScreen extends React.Component {
                         <div className='form-header center-div'>
                             <p className='form-title'>Thank You!!!</p>
                         </div>
-                        <div className='form-body thank-you-body'>
-                            <div className='form-section'>
-                                <p className='form-text'>Thank you very much for adding some joy into the world!</p>  
+                        <div className='submit-success-body'>
+                            <div className='submit-success-form-section'>
+                                <p className='form-text'>Thank you very much for adding some joy into the world! <i className="far fa-grin-beam"></i></p>  
                             </div>
-                            <div className='form-section'>
+                            <div className='submit-success-form-section'>
                                 <p className='form-text'>Your item id is:</p>
                                     <div className='input-box id-box'>
                                         <p className='id-text'>{this.props.foundCode}</p>
                                     </div>
                                 </div>
-                            <div className='form-section'>
+                            <div className='submit-success-form-section'>
                                 <p className='form-text'>Please include this id when hiding your item of joy so that others can let us know when they have found the item!</p>
                             </div>
-                            <div className='form-section'>
+                            <div className='submit-success-form-section'>
                                 <ItemDescriptionButton id={this.props.itemId}/>
                             </div>
                         </div>

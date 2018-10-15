@@ -5,8 +5,7 @@
 }
 
 .found-items-form {
-    width: 30em;
-    height: max-content;
+    width: 90%;
     margin: 1.5em auto;
     align-items: center;
     border: 2px solid var(--dark-button-color);
@@ -30,9 +29,16 @@
     height: 100%;
 }
 
+.found-items-form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em auto;
+}
+
 .found-title {
     text-align: center;
-    padding: .5em 0;
+    padding: 0.3em 0 0;
 }
 
 .search-id-form-section {
@@ -46,9 +52,23 @@
     margin: 0.8rem;
 }
 
+.found-items-buttons-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em auto;
+}
+
+@media(min-width: 368px) {
+    .found-items-form {
+         height: 80%;
+    }
+}
+
 @media(min-width: 768px) {
     .found-items-form {
-        width: 500px;
+        height: 90%;
+        width: 55rem;
         border: 4px solid var(--dark-button-color);
     }
     .search-id-box {
@@ -61,3 +81,9 @@
         padding: 0.65em 1em;
     }
 }
+
+/* @media(min-height: 768px) {
+    .found-items-form {
+        height: 85%;
+    }
+} */

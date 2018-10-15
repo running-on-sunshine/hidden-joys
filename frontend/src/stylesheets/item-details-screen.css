@@ -32,9 +32,10 @@ hr {
 }
 
 .item-detail-title {
-    margin: 0;
+    margin: 0.5em;
     font-family: var(--title-font);
-    font-size: 2rem;
+    font-size: 2em;
+    text-align: center;
 }
 .item-detail-form-body {
     height: 70%;
