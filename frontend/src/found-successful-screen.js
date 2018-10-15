@@ -26,19 +26,19 @@ class FoundSuccessfulScreen extends React.Component {
                 <Header />
                 <div className="screen center-div success-image-background">
                     <form 
-                        className='add-item-form'
+                        className='found-items-form'
                         onSubmit={event => {
                             event.preventDefault();
                             updateCommentFetch(this.state.comment, this.props.itemId, updateCommentSubmitted);
                         }}>
                         <p className='form-title found-title'>Joy Found!!!</p>
-                        <div className='form-section'>
-                            <p className='form-text'>Yay! You found some joy! Thank you for being awesomely you! <i className="far fa-grin-beam" />
-                            </p>
+                        <div className='found-items-form-section'>
+                            <p className='form-text'>Yay! You found some joy!</p> 
+                            <p className='form-text'>Thank you for being awesomely you! <i className="far fa-grin-beam" /></p>
                         </div>
                         {this.state.commentSubmitted
                         ? <p className='found-comment-thank-you'>Thank you for sharing your thoughts!!!</p>
-                        :<div className='form-section-change'>
+                        :<div>
                             <div className='form-section'>
                                 <p className='form-section-title'>Share your story! (Optional)</p>
                                 <textarea 
@@ -55,10 +55,8 @@ class FoundSuccessfulScreen extends React.Component {
                             </div>
                         </div>
                         }
-                        <div className='form-section'>
+                        <div className='found-items-buttons-section'>
                             <ItemDescriptionButton id={this.props.itemId}/>
-                        </div>
-                        <div className='form-section'>
                             <div className='form-btns-container'>
                                 <Link to='/add'><button className='form-button'>Add Joy</button></Link>
                                 <Link to='/search'><button className='form-button'>Find Joy</button></Link>

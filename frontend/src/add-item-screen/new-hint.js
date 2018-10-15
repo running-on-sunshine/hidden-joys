@@ -21,7 +21,7 @@ class NewHintForm extends React.Component {
                     }}
                 />
                 <button
-                    className='form-button fill-height'
+                    className='add-hint-button fill-height'
                     onClick={event => {
                         event.preventDefault();
                         this.props.hideNoHintsMessage();

@@ -14,13 +14,13 @@ let ItemDetailsStatusContainer = (props) =>
             <p className='item-details-section-title'>Status:</p>
             {props.item.item_found ?
             <div className='status-display-container'>
-                <p className='item-details-status-text'>Item Found!!</p>
+                <p className='item-details-status-text'>Item Found!</p>
                 <div className='status-comment-container'>
                     <p className='status-comment-font'>{props.item.found_comment}</p>
                 </div>
             </div> :
             <div className='status-display-container'>
-                <p className='item-details-status-text'>Item Still Hidden!!</p>
+                <p className='item-details-status-text'>Item still hidden!</p>
                 <div className='status-comment-container'>
                     <Link to='/found'><button className='detail-screen-button'>Found</button></Link>
                 </div>

@@ -1,0 +1,13 @@
+.submit-success-form-section {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    align-items: center;
+    margin: 0.5em auto
+}
+
+.submit-success-body {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}

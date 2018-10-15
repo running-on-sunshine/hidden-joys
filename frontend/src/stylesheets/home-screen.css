@@ -20,7 +20,7 @@
 }
 
 .home-search-box-wrapper {
-    width: 25em;
+    width: 24em;
     height: 100%;
     margin-right: 1em;
 }
@@ -30,7 +30,7 @@
 }
 
 .search-button {
-    padding: 0.5em 0.7em;
+    padding: 0.5em 0.9em;
     border-radius: 0.5em;
     font-size: 1.4em;
     background-color: var(--dark-button-color);
@@ -43,7 +43,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0.5em;
+    margin: 1.4em;
 }
 
 .navigation-button {
@@ -51,18 +51,25 @@
     margin: 1em;
     border-radius: 0.7em;
     background-color: var(--light-button-color);
-    /* background-color: rgba(157, 252, 220, 0.863); */
     font-size: 1.4em;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    /* box-shadow: 0 0.2rem 0.6rem rgba(11, 133, 123, 0.4); */
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
 }
 
 .navigation-button:hover {
     background-color: var(--dark-button-color);
     color: white;
+}
+
+@media(min-width: 360px) {
+    .navigation-btns-container {
+        margin: 2em;
+    }
+    .navigation-button {
+        padding: 1.7em 1.5em;
+    }
 }
 
 @media(min-width: 768px) {
@@ -72,12 +79,17 @@
 
     .search-container {
         margin-bottom: 1em;
-        height: 4.5em;
+        height: 4em;
     }
 
     .search-button {
         font-size: 1.6em;
-        padding: 0.7em 1em;
+        padding: 0.5em 1em;
+        margin: 0 0.3em;
+    }
+
+    .navigation-btns-container {
+        margin: 0.5em;
     }
 
     .navigation-button {

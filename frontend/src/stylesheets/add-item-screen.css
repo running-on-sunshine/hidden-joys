@@ -27,7 +27,7 @@
 .form-body {
     width: 100%;
     height: 78%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .form-title {
@@ -115,10 +115,10 @@
     padding-top: 1em;
 }
 
-.form-button {
+.form-button, .add-hint-button {
     background-color: var(--dark-button-color);
-    font-size: 1.2rem;
-    padding: .5rem 1rem;
+    font-size: 1.3em;
+    padding: 0.5em 1em;
     border-radius: .3em;
     border: none;
     color: white;
@@ -129,19 +129,13 @@
 
 .submit-button {
     background-color: var(--dark-button-color);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     padding: .5em;
     border-radius: .3em;
     border: none;
     color: white;
     font-weight: bold;
     letter-spacing: .1rem;
-}
-
-.thank-you-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .id-box {
@@ -179,10 +173,14 @@
 
 @media(min-width: 368px) {
     .submit-button {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
     .form-text {
         font-size: 1.5rem;
+    }
+    .form-button {
+        font-size: 1.4rem;
+        padding: 0.8em 1em;
     }
 }
 
@@ -201,14 +199,26 @@
         font-size: 2rem;
         width: 90%;
     }
-    .form-button, .form-text {
-        font-size: 2rem;
+    .form-button {
+        font-size: 1.6em;
+    }
+    .form-text {
+        font-size: 1.8em;
     }
     .description-box {
         height: 100px;
     }
     .hint-listing-text {
         font-size: 1.5rem;
+    }
+    .add-hint-button {
+        font-size: 1.65rem;
+    }
+    .id-box {
+        width: 80%;
+    }
+    .submit-button {
+        font-size: 2rem;
     }
 }
 

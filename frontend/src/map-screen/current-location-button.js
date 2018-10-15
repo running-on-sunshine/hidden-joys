@@ -18,7 +18,7 @@ let CurrentLocationButton = (props) =>
             });
         }
         }
-    ><i className="fas fa-map-marker-alt"></i> Current</button>
+    ><i className='fas fa-map-marker-alt icon'></i> Current</button>
 
 export default connect(
     state => ({
