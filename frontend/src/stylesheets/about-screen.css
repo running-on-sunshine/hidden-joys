@@ -2,17 +2,34 @@
     font-weight: bold;
 }
 
-.about-text {
+.about-form-body {
+    width: 100%;
+    height: 74%;
+    overflow-y: auto;
+}
+
+.about-form-footer {
+    width: 100%;
+    height: 15%;
+}
+
+.about-form-text {
     font-family: var(--main-text-font);
-    font-size: 1.45rem;
+    font-size: 1.5rem;
     text-align: center;
     margin: .5em;
     letter-spacing: .05rem;
     line-height: 1.5;
 }
 
-@media(min-width: 768px) {
-    .about-text {
+@media(min-width: 368px) {
+    .about-form-text {
         font-size: 1.6rem;
+    }
+}
+
+@media(min-width: 768px) {
+    .about-form-text {
+        font-size: 1.7rem;
     }
 }
