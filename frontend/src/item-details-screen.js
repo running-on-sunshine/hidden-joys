@@ -38,9 +38,16 @@ class ItemDetailsScreen extends React.Component {
                         <ImageLinkErrorMessage />:
                         <div className='item-details-container'>
                             <div className='desktop-map-display'>
-                                <ItemDetailScreenMapContainer lat={this.state.item.lat} lng={this.state.item.lng}/>
+                                <ItemDetailScreenMapContainer 
+                                    lat={this.state.item.lat} 
+                                    lng={this.state.item.lng} 
+                                    title={this.state.item.id}
+                                />
                             </div>
-                            <ItemDetailsForm item={this.state.item} hints={this.state.hints}/>
+                            <ItemDetailsForm 
+                                item={this.state.item} 
+                                hints={this.state.hints}
+                            />
                         </div>
                     }
                 </div>

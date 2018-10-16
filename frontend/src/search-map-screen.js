@@ -40,7 +40,7 @@ class SearchMapScreen extends React.Component {
         return (
             <div className="full-screen">
                 <Header />
-                <div className="screen center-div">
+                <div className="screen center-div success-image-background">
                     <div className='search-map-screen-container'>
                         <div className='desktop-map'>
                             <div className='search-map-container desktop-map-container'>

@@ -81,6 +81,7 @@
 .new-hint-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 90%;
 }
 
@@ -172,6 +173,9 @@
 }
 
 @media(min-width: 368px) {
+    .add-item-form {
+        width: 330px;
+    }
     .submit-button {
         font-size: 1.6rem;
     }
@@ -181,6 +185,9 @@
     .form-button {
         font-size: 1.4rem;
         padding: 0.8em 1em;
+    }
+    .input-box, .add-item-search-box-wrapper {
+        width: 245px;
     }
 }
 
