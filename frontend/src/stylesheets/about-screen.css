@@ -1,3 +1,18 @@
 .about-text-title {
     font-weight: bold;
 }
+
+.about-text {
+    font-family: var(--main-text-font);
+    font-size: 1.45rem;
+    text-align: center;
+    margin: .5em;
+    letter-spacing: .05rem;
+    line-height: 1.5;
+}
+
+@media(min-width: 768px) {
+    .about-text {
+        font-size: 1.6rem;
+    }
+}
