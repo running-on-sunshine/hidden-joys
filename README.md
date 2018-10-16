@@ -1,10 +1,11 @@
 # Hidden Joys  
 
+## Contributors  
+- Liz Khuu
+- Clint Urbin
 
 ## Technologies Used  
-- HTML, CSS, JavaScript, Node.js, Express, React, Redux, Google Maps API
-- Libraries:  
-    - body-parser, cors, react-dom, react-google-maps, react-redux, react-router-dom, recompose, 
+- HTML, CSS, JavaScript, Node.js, Express, React, Redux, Google Maps API, Amazon Web Services
 
 ## Features  
 - USERS CAN HIDE NEW ITEMS:  
@@ -32,3 +33,41 @@
         })
     ```
     - Getting one info window to display at a time when a marker was clicked turned out to be a bit more diffcult than expected. To handle this we had to make each Marker a class component so we could keep track of state. In the state we could keep track of whether or not the marker was the active marker and also if it was open. Since we stored this in state we were able to add a onClick handler to each marker to change these state values when a marker was clicked. Then, if a marker was open and was the active marker we would then render the info window to the map.
+
+- Deployment  
+    - Issue:  
+    To deploy our site we had our React front end build files being hosted on githug pages and our backend node files and database were being stored on Amazon Web Services, where we used a free tier EC2 instance. The issue we encountered was that github served our site over https and our AWS was being hosted over http. When the site was loaded using https, it couldn't connect to our AWS instance and when it was loaded over http, it wasn't able to get a users current location using the geolocation getCurrentPosition() function. Since, this was an important feature of our app, we needed to figure out how to serve our AWS over https.  
+    - Solution:  
+    To solve this problem we basically needed to added certificates to our AWS instance that proves we were the owners of the https site we were connecting with. The steps we took to accomplish this were pretty much as follows:  
+        (Note: before starting this process we had purchased a domain for our site using namecheap)
+        - Install certbot (in terminal type: brew install certbot)
+        - In terminal:  sudo certbot certonly --manual --preferred-challenges=dns -d api.`<site-url>`
+        - This will give us a DNS TEXT record and value which we then can use (don't hit enter until the next step is complete)
+        - On namecheap, go to your domain and direct to the Advanced DNS manager
+        - Here we will add the following fields:  
+            - Type: CNAME Record / Host: api / Value: (this will be your AWS ec2 link)
+            - Type: TXT Record / Host: _acme-challenge.api / Value: (this will be the value that certbor generated in your terminal)
+        - Once you have added these values to namecheap you can return to the terminal and hit enter
+        - If you did this correctly you will see a message saying 'Congratulations! Your certificate and chain have been saved at:'
+        - You will see that two .pem files were generated and stored on your local machine. We need to get these keys onto our AWS server
+        - We next need to move the files somewhere we can access them. I put them on the desktop. To do this:  
+            - sudo cp /file-location/fullchain.pem ~/Desktop/  (file-location just refers to the route on your machine)
+            - sudo cp /file-location/privatekey.pem ~/Desktop/  (file-location just refers to the route on your machine)
+        - After the files are moved we need to change the file extensions.  
+            - /fullchain.pem -> .cert
+            - /privatekey.pem -> .key
+        - Next, to add these files to our AWS instance we used cyberduck. (We had to install it first from cyberduck.io) 
+        - Open cyberduck  
+            - Connect to AWS instance
+            - Navigate to ubuntu folder and create a folder called certs
+            - Open the certs folder and add the .cert and .key files  
+        - After the certificates are on AWS, we reconfigured nginx with the following:  
+            - listen 443 ssl default_server;
+            - listen [::]:443 ssl default_server;
+            - ssl on;
+            - ssl_certificate /home/ubuntu/certs/api.`url`.crt; (url is just your sites domain)
+            - ssl_certificate_key /home/ubuntu/certs/api.`url`.key;
+        - Then check for syntax errors and restart nginx.  
+            - sudo nginx -t
+            - sudo systemctl restart nginx
+        - After that, we had to go into our .env.production.local file and change our REACT_APP_API_URL to point to the new domain

@@ -81,7 +81,7 @@
 
 @media(min-width: 368px) {
     .found-items-form {
-         height: 80%;
+         /* height: 80%; */
     }
     .found-comment-thank-you {
         font-size: 1.6em;

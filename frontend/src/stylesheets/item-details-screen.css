@@ -48,7 +48,6 @@ hr {
 }
 
 .item-detail-map-container {
-    width: 20em;
     height: 20em;
     margin: auto;
     border: 2px solid var(--dark-button-color);
@@ -98,7 +97,6 @@ hr {
 }
 
 .hints-container {
-    width: 85%;
     margin: .5em auto;
     border: 1px solid black;
     border-radius: .5em;
@@ -141,6 +139,7 @@ hr {
     }
     .item-details-container {
         width: 90%;
+        height: 85%;
         display: flex;
     }
     .item-detail-form {
@@ -167,16 +166,3 @@ hr {
         width: 70%;
     }
 }
-
-@media(min-height: 768px) {
-    .item-details-container {
-        height: 500px;
-    }
-}
-
-@media(min-height: 1200px) {
-    .item-details-container {
-        height: 700px;
-    }
-}
-
