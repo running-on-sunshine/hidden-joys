@@ -6,8 +6,6 @@
 
 ## Technologies Used  
 - HTML, CSS, JavaScript, Node.js, Express, React, Redux, Google Maps API, Amazon Web Services
-- Additional Libraries Used:  
-    - body-parser, cors, dotenv, pgpromise, react-dom, react-google-maps, react-router-dom, recompose, 
 
 ## Features  
 - USERS CAN HIDE NEW ITEMS:  
@@ -42,13 +40,13 @@
     - Solution:  
     To solve this problem we basically needed to added certificates to our AWS instance that proves we were the owners of the https site we were connecting with. The steps we took to accomplish this were pretty much as follows:  
         (Note: before starting this process we had purchased a domain for our site using namecheap)
-        - Install certbort (in terminal type: brew install certbot)
+        - Install certbot (in terminal type: brew install certbot)
         - In terminal:  sudo certbot certonly --manual --preferred-challenges=dns -d api.`<site-url>`
         - This will give us a DNS TEXT record and value which we then can use (don't hit enter until the next step is complete)
-        - On namecheap, go your domain and direct to the Advanced DNS manager
+        - On namecheap, go to your domain and direct to the Advanced DNS manager
         - Here we will add the following fields:  
             - Type: CNAME Record / Host: api / Value: (this will be your AWS ec2 link)
-            - Type: TXT Record   / Host: _acme-challenge.api / Value: (this will be the value that certbor generated in your terminal)
+            - Type: TXT Record / Host: _acme-challenge.api / Value: (this will be the value that certbor generated in your terminal)
         - Once you have added these values to namecheap you can return to the terminal and hit enter
         - If you did this correctly you will see a message saying 'Congratulations! Your certificate and chain have been saved at:'
         - You will see that two .pem files were generated and stored on your local machine. We need to get these keys onto our AWS server
@@ -58,8 +56,11 @@
         - After the files are moved we need to change the file extensions.  
             - /fullchain.pem -> .cert
             - /privatekey.pem -> .key
-        - Next, to add these files to our AWS instance we used cyberduck. (We had to install it first from cyberduck.io)  
-        - Using cyberduck, we added these files to a folder we created on our server titled certs
+        - Next, to add these files to our AWS instance we used cyberduck. (We had to install it first from cyberduck.io) 
+        - Open cyberduck  
+            - Connect to AWS instance
+            - Navigate to ubuntu folder and create a folder called certs
+            - Open the certs folder and add the .cert and .key files  
         - After the certificates are on AWS, we reconfigured nginx with the following:  
             - listen 443 ssl default_server;
             - listen [::]:443 ssl default_server;
