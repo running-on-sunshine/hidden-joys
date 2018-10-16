@@ -13,11 +13,16 @@
 
         After the user submits the form, they are directed to a screen thanking them for their submission. They are also given an id to include with their item so whoever finds the item can report that they found it. 
 
-    <img src="frontend/public/assets/add-item-screen.jpg"/>   
+    <img src="frontend/public/assets/add-item-screen.jpg" style="margin-left:35px"/>   
     <img src="frontend/public/assets/submit-success-screen.jpg"/>
-
-- GOOGLE MAPS
-    - User can search for a specific location or use their current location to set the center of the map.
+- USERS CAN SEARCH FOR HIDDEN ITEMS:  
+    - Another key feature of this application is the ability for users to search for hidden items. On the search screen users will see a map with markers representing hidden items. As a default, the location for the map is set to Atlanta, GA. This will change when the user selects a location to search. Like the add item screen, users can choose to either search for hidden items by their current location or by selecting a place in the Seach Places input box, which is linked to the Google Places library.  
+    
+        Users are also able to filter the displayed markers by selecting All, Not Found, or Found. So, if someone just wants to see which items are still hidden, they select Not Found and the map will just display the items that are still hidden.  
+        
+        The search screen also has buttons to allow the user to add new items or report that an item has been found.  
+    
+    <img src="frontend/public/assets/search-map.jpg" style="margin-top:10px; margin-left:35px"/>  
 
 ## Challenges  
 - Using the Google Maps API with a React application  
@@ -36,32 +41,32 @@
 
 - Deployment  
     - Issue:  
-    To deploy our site we had our React front end build files being hosted on githug pages and our backend node files and database were being stored on Amazon Web Services, where we used a free tier EC2 instance. The issue we encountered was that github served our site over https and our AWS was being hosted over http. When the site was loaded using https, it couldn't connect to our AWS instance and when it was loaded over http, it wasn't able to get a users current location using the geolocation getCurrentPosition() function. Since, this was an important feature of our app, we needed to figure out how to serve our AWS over https.  
+    To deploy our site we had our React front end build files being hosted on github pages and our backend node files and database were being stored on Amazon Web Services, where we used a free tier EC2 instance. The issue we encountered was that github served our site over https and our AWS was being served over http. When the site was loaded using https, it couldn't connect to our AWS instance and when it was loaded over http, it wasn't able to get a users current location using the geolocation getCurrentPosition() function. Since, this was an important feature of our app, we needed to figure out how to serve our AWS over https.  
     - Solution:  
-    To solve this problem we basically needed to added certificates to our AWS instance that proves we were the owners of the https site we were connecting with. The steps we took to accomplish this were pretty much as follows:  
+    To solve this problem we basically needed to added certificates to our AWS instance that proves we were the owners of the https site we were connecting with. The followoing are steps to help accomplish this:  
         (Note: before starting this process we had purchased a domain for our site using namecheap)
         - Install certbot (in terminal type: brew install certbot)
         - In terminal:  sudo certbot certonly --manual --preferred-challenges=dns -d api.`<site-url>`
-        - This will give us a DNS TEXT record and value which we then can use (don't hit enter until the next step is complete)
-        - On namecheap, go to your domain and direct to the Advanced DNS manager
-        - Here we will add the following fields:  
+        - This will give you a DNS TEXT record and value which can use be used (don't hit enter until the next step is complete)
+        - On namecheap, go to the Advanced DNS manager for the purchased domain
+        - Here add the following fields:  
             - Type: CNAME Record / Host: api / Value: (this will be your AWS ec2 link)
             - Type: TXT Record / Host: _acme-challenge.api / Value: (this will be the value that certbor generated in your terminal)
-        - Once you have added these values to namecheap you can return to the terminal and hit enter
+        - Once these values are added to namecheap, return to the terminal and hit enter
         - If you did this correctly you will see a message saying 'Congratulations! Your certificate and chain have been saved at:'
-        - You will see that two .pem files were generated and stored on your local machine. We need to get these keys onto our AWS server
-        - We next need to move the files somewhere we can access them. I put them on the desktop. To do this:  
-            - sudo cp /file-location/fullchain.pem ~/Desktop/  (file-location just refers to the route on your machine)
-            - sudo cp /file-location/privatekey.pem ~/Desktop/  (file-location just refers to the route on your machine)
-        - After the files are moved we need to change the file extensions.  
+        - You will see that two .pem files were generated and stored on your local machine. (You need to get these keys onto your AWS server)
+        - First, move the files somewhere you can access them. I put them on the desktop. To do this:  
+            - sudo cp /file-location/fullchain.pem ~/Desktop/  (file-location just refers to the route on your machine where .pem was stored)
+            - sudo cp /file-location/privatekey.pem ~/Desktop/
+        - After the files are moved, change the file extensions.  
             - /fullchain.pem -> .cert
             - /privatekey.pem -> .key
-        - Next, to add these files to our AWS instance we used cyberduck. (We had to install it first from cyberduck.io) 
+        - Next, to add these files to our AWS instance we used cyberduck. (You may have to install it first from cyberduck.io) 
         - Open cyberduck  
             - Connect to AWS instance
-            - Navigate to ubuntu folder and create a folder called certs
+            - Navigate to ubuntu folder and create a folder called certs  
             - Open the certs folder and add the .cert and .key files  
-        - After the certificates are on AWS, we reconfigured nginx with the following:  
+        - After the certificates are on AWS, reconfigure nginx with the following:  
             - listen 443 ssl default_server;
             - listen [::]:443 ssl default_server;
             - ssl on;
@@ -70,4 +75,4 @@
         - Then check for syntax errors and restart nginx.  
             - sudo nginx -t
             - sudo systemctl restart nginx
-        - After that, we had to go into our .env.production.local file and change our REACT_APP_API_URL to point to the new domain
+        - After that, go into your .env.production.local file and change our REACT_APP_API_URL to point to the new domain
