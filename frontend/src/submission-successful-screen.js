@@ -14,10 +14,10 @@ class SubmissionSuccessfulScreen extends React.Component {
                 <Header />
                 <div className="screen center-div success-image-background">
                     <div className='add-item-form'>
-                        <div className='form-header center-div'>
+                        <div className='submit-success-form-header center-div'>
                             <p className='form-title'>Thank You!!!</p>
                         </div>
-                        <div className='submit-success-body'>
+                        <div className='submit-success-form-body'>
                             <div className='submit-success-form-section'>
                                 <p className='form-text'>Thank you very much for adding some joy into the world! <i className="far fa-grin-beam"></i></p>  
                             </div>
@@ -33,8 +33,6 @@ class SubmissionSuccessfulScreen extends React.Component {
                             <div className='submit-success-form-section'>
                                 <ItemDescriptionButton id={this.props.itemId}/>
                             </div>
-                        </div>
-                        <div className='form-footer center-div'>
                             <div className='form-btns-container'>
                                 <Link to='/add'><button className='form-button'>Add Joy</button></Link>
                                 <Link to='/search'><button className='form-button'>Find Joy</button></Link>
