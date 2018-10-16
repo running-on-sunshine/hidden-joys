@@ -114,7 +114,7 @@ class AddItemScreen extends React.Component {
                                 </select>
                                 {this.state.location === 'current' ? <p></p> : 
                                 <div className='add-item-search-box-wrapper'>
-                                    <p className='form-text'>Enter Location:</p>
+                                    <p className='form-section-title'>Enter Location:</p>
                                     <SearchBox />
                                 </div>}
                             </div>

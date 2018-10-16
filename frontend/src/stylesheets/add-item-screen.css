@@ -71,7 +71,7 @@
 
 .form-text { 
     font-family: var(--main-text-font);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     text-align: center;
     margin: .5em;
     letter-spacing: .05rem;
@@ -174,7 +174,7 @@
         font-size: 1.6rem;
     }
     .form-text {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
     .form-button {
         font-size: 1.4rem;
