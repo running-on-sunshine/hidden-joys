@@ -58,6 +58,10 @@
     font-weight: bold;
 }
 
+.current-location-button:hover {
+    background-color: rgb(255, 158, 30);
+}
+
 .separator-text {
     margin: 0 0.8em;
     font-family: var(--main-text-font);
@@ -112,16 +116,24 @@
 }
 
 .all-filter:hover {
-    background-color: rgb(9, 111, 245);
-    color: black;
+    background-color: rgb(67, 149, 255);
 }
 
 .not-found-filter {
     background-color: rgb(16, 168, 16);
 }
 
+.not-found-filter:hover {
+    /* background-color: rgb(14, 155, 14); */
+    background-color: rgb(40, 187, 40);
+}
+
 .found-filter {
     background-color: rgb(253, 60, 60);
+}
+
+.found-filter:hover {
+    background-color: rgb(255, 80, 80);
 }
 
 .search-form-button {
@@ -251,7 +263,6 @@
     }
     .filter-button {
         font-size: 1.5rem;
-        /* padding: 0.8em 1.7em; */
     }
     .filter-map-buttons {
         display: flex;
@@ -271,6 +282,9 @@
     .search-form-button {
         padding: 0.8em 1em;
         font-size: 1.7rem;
+    }
+    .search-box {
+        height: 2.7em;
     }
 }
 

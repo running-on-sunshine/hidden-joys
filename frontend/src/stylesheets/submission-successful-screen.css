@@ -6,8 +6,13 @@
     margin: 0.5em auto
 }
 
-.submit-success-body {
-    display: flex;
-    flex-direction: column;
+.submit-success-form-header {
+    width: 100%;
+    height: 12%
+}
+
+.submit-success-form-body {
+    width: 100%;
+    height: 80%;
     overflow-y: auto;
 }

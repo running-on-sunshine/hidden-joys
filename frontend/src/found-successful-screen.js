@@ -31,35 +31,39 @@ class FoundSuccessfulScreen extends React.Component {
                             event.preventDefault();
                             updateCommentFetch(this.state.comment, this.props.itemId, updateCommentSubmitted);
                         }}>
-                        <p className='form-title found-title'>Joy Found!!!</p>
-                        <div className='found-items-form-section'>
-                            <p className='form-text'>Yay! You found some joy!</p> 
-                            <p className='form-text'>Thank you for being awesomely you! <i className="far fa-grin-beam" /></p>
+                        <div className='form-header center-div'>
+                            <p className='form-title found-title'>Joy Found!!!</p>
                         </div>
-                        {this.state.commentSubmitted
-                        ? <p className='found-comment-thank-you'>Thank you for sharing your thoughts!!!</p>
-                        :<div>
-                            <div className='form-section'>
-                                <p className='form-section-title'>Share your story! (Optional)</p>
-                                <textarea 
-                                    className='input-box description-box'
-                                    placeholder=''
-                                    value={this.state.comment}
-                                    onChange={event => {
-                                        this.setState({comment: event.target.value})
-                                    }} 
-                                />
+                        <div className='form-body'>
+                            <div className='found-items-form-section'>
+                                <p className='form-text'>Yay! You found some joy!</p> 
+                                <p className='form-text'>Thank you for being awesomely you! <i className="far fa-grin-beam" /></p>
                             </div>
-                            <div className='form-section'>
-                                <button type='submit' className='form-button'>Submit</button>
+                            {this.state.commentSubmitted
+                            ? <p className='found-comment-thank-you'>Thank you for sharing your thoughts!!! <i className="far fa-smile"></i></p>
+                            :<div>
+                                <div className='form-section'>
+                                    <p className='form-section-title'>Share your story! (Optional)</p>
+                                    <textarea 
+                                        className='input-box description-box'
+                                        placeholder=''
+                                        value={this.state.comment}
+                                        onChange={event => {
+                                            this.setState({comment: event.target.value})
+                                        }} 
+                                    />
+                                </div>
+                                <div className='form-section'>
+                                    <button type='submit' className='form-button'>Submit</button>
+                                </div>
                             </div>
-                        </div>
-                        }
-                        <div className='found-items-buttons-section'>
-                            <ItemDescriptionButton id={this.props.itemId}/>
-                            <div className='form-btns-container'>
-                                <Link to='/add'><button className='form-button'>Add Joy</button></Link>
-                                <Link to='/search'><button className='form-button'>Find Joy</button></Link>
+                            }
+                            <div className='found-items-buttons-section'>
+                                <ItemDescriptionButton id={this.props.itemId}/>
+                                <div className='form-btns-container'>
+                                    <Link to='/add'><button className='form-button'>Add Joy</button></Link>
+                                    <Link to='/search'><button className='form-button'>Find Joy</button></Link>
+                                </div>
                             </div>
                         </div>
                     </form>
