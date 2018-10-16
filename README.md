@@ -1,4 +1,9 @@
-# Hidden Joys  
+# Hidden Joys
+
+## About
+Hidden Joys was made for people who want to share a little piece of positivity in the world by creating a mini piece of art or a kind note/message and hiding it out there for someone else to find.
+
+We believe in creating joy for others by lifting them up, putting a smile on their faces, and having a little fun in the process! 
 
 ## Contributors  
 - Liz Khuu
@@ -7,7 +12,13 @@
 ## Technologies Used  
 - HTML, CSS, JavaScript, Node.js, Express, React, Redux, Google Maps API, Amazon Web Services
 
-## Features  
+## Key Features
+- Users can hide new items
+- Users can search for hidden items
+- Users can view individual item details
+- Users can mark an item found
+
+## Features in Detail  
 - USERS CAN HIDE NEW ITEMS:  
     - When a user wants to hide a new item, they fill out a form which includes an item title, location, image and list of hints. The user can either use their current location or search for an address using the Google Places Library. The user can also add new hints by typing the hint in the input box and clicking the add button. This will then display the newly entered hint in a listing below the input box. After the user has entered a hint they will have the ability to remove the hint from the list by clicking the remove button. Also, the user will not be able to submit a new item form without including at least one hint. If they try to submit a form without any hints they will get a message asking them to include a hint.  
 
