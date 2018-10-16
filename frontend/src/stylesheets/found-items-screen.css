@@ -6,6 +6,7 @@
 
 .found-items-form {
     width: 90%;
+    height: 95%;
     margin: 1.5em auto;
     align-items: center;
     border: 2px solid var(--dark-button-color);
@@ -61,7 +62,7 @@
 
 @media(min-width: 368px) {
     .found-items-form {
-         height: 80%;
+         /* height: 80%; */
     }
 }
 

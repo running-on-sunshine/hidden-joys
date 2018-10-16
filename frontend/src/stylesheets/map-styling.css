@@ -200,12 +200,12 @@
 
 @media(min-width: 768px) {
     .search-map-screen-container {
-        width: 95%;
+        width: 90%;
         padding: 1em;
     }
-    .search-map-screen-container-section{
+    /* .search-map-screen-container-section{
         width: 85%;
-    }
+    } */
     .desktop-map {
         display: flex;
         justify-content: center;
@@ -259,7 +259,8 @@
         align-items: center;
         border: 1px solid black;
         border-radius: 0.3em;
-        padding: 1.5em;
+        /* padding: 1.5em; */
+        padding: 1em 0;
         width: 100%;
         box-shadow: 0 .2rem .6rem rgba(0, 0, 0, 0.3);
         font-size: 1.5em;
@@ -275,7 +276,8 @@
 
 @media(min-width: 1200px) {
     .search-map-screen-container {
-        width: 1140px;
+        /* width: 1140px; */
+        width: 1000px;
     }
 }
 
