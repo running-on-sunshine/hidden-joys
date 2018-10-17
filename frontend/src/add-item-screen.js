@@ -135,7 +135,7 @@ class AddItemScreen extends React.Component {
                                 <p className='form-section-title'>Hints</p>
                                 <NewHintForm addNewHint={addNewHint} hideNoHintsMessage={hideNoHintsMessage}/>
                                 {this.state.showNoHintsMessage 
-                                    ? <p className='no-hints-message'>Please Provide a Hint!!!</p>
+                                    ? <p className='no-hints-message'>Please provide a hint!</p>
                                     : <HintListings hints={this.state.hints} removeHint={removeHint}/>
                                 }
                             </div>
