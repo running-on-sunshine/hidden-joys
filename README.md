@@ -1,5 +1,7 @@
 # Hidden Joys
 
+<img src='frontend/public/assets/home-screen-desktop-v2.png' alt='Hidden Joys Homepage on desktop'/>
+
 ## About
 Hidden Joys was made for people who want to share a little piece of positivity in the world by creating a mini piece of art or a kind note/message and hiding it out there for someone else to find.
 
@@ -20,12 +22,42 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 
 ## Features in Detail  
 - USERS CAN HIDE NEW ITEMS:  
-    - When a user wants to hide a new item, they fill out a form which includes an item title, location, image and list of hints. The user can either use their current location or search for an address using the Google Places Library. The user can also add new hints by typing the hint in the input box and clicking the add button. This will then display the newly entered hint in a listing below the input box. After the user has entered a hint they will have the ability to remove the hint from the list by clicking the remove button. Also, the user will not be able to submit a new item form without including at least one hint. If they try to submit a form without any hints they will get a message asking them to include a hint.  
+    - When a user wants to hide a new item, they fill out a form which includes an item title, location, image, and a list of hints. 
+    
+    <img src='frontend/public/assets/add-item-screen-mobile.png' alt='Hide New Item form' style="margin-top:10px; margin-left:35px"/>
 
-        After the user submits the form, they are directed to a screen thanking them for their submission. They are also given an id to include with their item so whoever finds the item can report that they found it. 
+    <div style="margin-top:10px; margin-bottom:10px; margin-left:35px">Hide New Item form (mobile screen)</div>
+    
+    - The user can either use their current location or search for an address using the Google Places Library. 
 
-    <img src="frontend/public/assets/add-item-screen.jpg" style="margin-left:35px"/>   
-    <img src="frontend/public/assets/submit-success-screen.jpg"/>
+    <img src='frontend/public/assets/use-current-location-mobile.png' alt='Use Current Location dropdown option' style="margin-top:10px; margin-left:35px"/>
+    
+    <div style="margin-top:10px; margin-bottom:10px; margin-left:35px">Use Current Location dropdown option</div>
+
+    <img src='frontend/public/assets/search-by-location-mobile.png' alt='Search By Location dropdown option' style="margin-top:10px; margin-left:35px"/>
+    
+    <div style="margin-top:10px; margin-bottom:10px; margin-left:35px">Search By Location dropdown option</div>
+    
+    - The user can also add new hints by typing the hint in the input box and clicking the add (+) button. This will then display the newly entered hint in a listing below the input box. After the user has entered a hint they will have the ability to remove the hint from the list by clicking the remove (-) button. 
+    
+
+    <img src='frontend/public/assets/add-hint-mobile.png' alt='Add New Hint input' style="margin-top:10px; margin-left:35px"/>
+
+   <div style="margin-top:10px; margin-bottom:10px; margin-left:35px">Add New Hint input</div>
+    
+    - Form requirement: The user will not be able to submit a form without including at least one hint. If they try to submit a form without any hints, they will get a message asking them to include a hint.
+
+    <img src='frontend/public/assets/hint-requirement-mobile.png' alt='Hint requirement message' style="margin-top:10px; margin-left:35px"/>
+
+    <div style="margin-top:10px; margin-bottom:10px; margin-left:35px">Hint requirement message</div>
+
+    - After the user submits the form, they are directed to a screen thanking them for their submission. They are also given an id to include with their item so whoever finds the item can report that they found it. 
+
+    <img src='frontend/public/assets/submission-successful-screen-mobile.png' alt='Thank you message to confirm that the Add New Item form has been submitted successfully' style="margin-top:10px; margin-left:35px"/>
+
+    <!-- <img src="frontend/public/assets/add-item-screen.jpg" style="margin-left:35px"/>   
+    <img src="frontend/public/assets/submit-success-screen.jpg"/> -->
+
 - USERS CAN SEARCH FOR HIDDEN ITEMS:  
     - Another key feature of this application is the ability for users to search for hidden items. On the search screen users will see a map with markers representing hidden items. As a default, the location for the map is set to Atlanta, GA. This will change when the user selects a location to search. Like the add item screen, users can choose to either search for hidden items by their current location or by selecting a place in the Seach Places input box, which is linked to the Google Places library.  
     
