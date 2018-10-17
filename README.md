@@ -35,6 +35,22 @@ We believe in creating joy for others by lifting them up, putting a smile on the
     
     <img src="frontend/public/assets/search-map.jpg" style="margin-top:10px; margin-left:35px"/>  
 
+- USERS CAN VIEW ITEM DETAILS:  
+    - The Item Details page displays the item's title, an image, the found status, a list of hints to help people find the item, and a map for the item.
+
+        If the item is still hidden, the Status will say, "Item still hidden!" and there will be a button that opens the found items form. If an item has been found, the status will say, "Item Found!" Also, if there was a comment left by the person who found the item, it will be displayed here.  
+
+        The map on the Item Details page shows a marker for only that item. Also, when you click on 'More Options,' Google Directions opens in a new tab pointing the user to the items location.  
+
+    <img src="frontend/public/assets/item-details.jpg" style="margin-top:10px; margin-left:35px"/>  
+
+## Demo  
+  <div style="margin-left:70px; margin-top:10px">
+    <a href="https://youtu.be/6O1ScusK5Tc" target="_blank">
+      <img src="frontend/public/assets/home-page.jpg"/>
+    </a>
+  </div>
+
 ## Challenges  
 - Using the Google Maps API with a React application  
     - The first challenge encountered with using the Google Maps API was figuring out how to display the map on the screen. The documentation on the Google Maps Platfrom page show how to add a map to your site using HTML and vanilla JavaScript. Since, our application is built with React, we needed to find another way to implement the api.  The solution we found to this was to install the react-google-maps library. The git repo for this library can be found at github.com/tomchentw/react-google-maps. The readme links to documentation on how to use the library.
@@ -86,4 +102,4 @@ We believe in creating joy for others by lifting them up, putting a smile on the
         - Then check for syntax errors and restart nginx.  
             - sudo nginx -t
             - sudo systemctl restart nginx
-        - After that, go into your .env.production.local file and change our REACT_APP_API_URL to point to the new domain
+        - After that, go into your .env.production.local file and change our REACT_APP_API_URL to point to the new domain  
