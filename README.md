@@ -10,7 +10,7 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 - Clint Urbin
 
 ## Technologies Used  
-- HTML, CSS, JavaScript, Node.js, Express, React, Redux, Google Maps API, Amazon Web Services
+- HTML, CSS, JavaScript, Node.js, Express, PostgreSQL, React, Redux, Google Maps API, Amazon Web Services
 
 ## Key Features
 - Users can hide new items
@@ -43,6 +43,14 @@ We believe in creating joy for others by lifting them up, putting a smile on the
         The map on the Item Details page shows a marker for only that item. Also, when you click on 'More Options,' Google Directions opens in a new tab pointing the user to the items location.  
 
     <img src="frontend/public/assets/item-details.jpg" style="margin-top:10px; margin-left:35px"/>  
+
+- USERS CAN MARK ITEMS AS FOUND:  
+    - When someone finds an item out in the world, there should be an id included with it. The user can enter this id in the Found Item Form. If someone enters an invalid id, they will see a message that says, "Invalid Id." If someone enters an id for an item that has already been found, they will see a message that says, "Item has already been found" and will see a button that opens the detail page for that item.  
+
+        When someone enters a correct id for a hidden item, they will be directed to a form confirming that the item has been marked as found. The user can then add an optional comment about their experience.
+
+    <img src="frontend/public/assets/found-item.jpg" style="margin-left:35px"/>   
+    <img src="frontend/public/assets/found-success.jpg"/>
 
 ## Demo  
   <div style="margin-left:70px; margin-top:10px">
@@ -102,4 +110,4 @@ We believe in creating joy for others by lifting them up, putting a smile on the
         - Then check for syntax errors and restart nginx.  
             - sudo nginx -t
             - sudo systemctl restart nginx
-        - After that, go into your .env.production.local file and change our REACT_APP_API_URL to point to the new domain  
+        - After that, go into your .env.production.local file and change your REACT_APP_API_URL to point to the new domain  
