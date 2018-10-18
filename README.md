@@ -1,6 +1,6 @@
 # Hidden Joys
 
-<img src='frontend/public/assets/home-screen-desktop-v2.png' alt='Hidden Joys Homepage on desktop'/>
+<img src='frontend/public/assets/home-screen-desktop-v3.jpg' alt='Hidden Joys Homepage on desktop'/>
 
 ## About
 Hidden Joys was made for people who want to share a little piece of positivity in the world by creating a mini piece of art or a kind note/message and hiding it out there for someone else to find.
@@ -24,36 +24,35 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 - USERS CAN HIDE NEW ITEMS:  
     - When a user wants to hide a new item, they fill out a form which includes an item title, location, image, and a list of hints. 
     
-    <img src='frontend/public/assets/add-item-screen-mobile.png' alt='Hide New Item form' style="margin-top:10px; margin-left:35px"/>
+        <img src='frontend/public/assets/add-item-screen-mobile.jpg' alt='Hide New Item form' style="margin-top:10px; margin-bottom:10px; margin-left:35px"/>
 
-    <div style="margin-top:10px; margin-bottom:10px; margin-left:35px">Hide New Item form (mobile screen)</div>
+        <div style="margin-top:10px; margin-bottom:10px; margin-left:35px"><em>Hide New Item Form (mobile)</em></div>
     
     - The user can either use their current location or search for an address using the Google Places Library. 
 
-    <img src='frontend/public/assets/use-current-location-mobile.png' alt='Use Current Location dropdown option' style="margin-top:10px; margin-left:35px"/>
+        <img src='frontend/public/assets/use-current-location-mobile.png' alt='Use Current Location dropdown option' style="margin-top:10px; margin-left:35px"/>
     
-    <div style="margin-top:10px; margin-bottom:10px; margin-left:35px">Use Current Location dropdown option</div>
+        <div style="margin-top:10px; margin-bottom:10px; margin-left:35px"><em>Dropdown option: Use Current Location</em></div>
 
-    <img src='frontend/public/assets/search-by-location-mobile.png' alt='Search By Location dropdown option' style="margin-top:10px; margin-left:35px"/>
+        <img src='frontend/public/assets/search-by-location-mobile.png' alt='Search By Location dropdown option' style="margin-top:10px; margin-left:35px"/>
     
-    <div style="margin-top:10px; margin-bottom:10px; margin-left:35px">Search By Location dropdown option</div>
+        <div style="margin-top:10px; margin-bottom:10px; margin-left:35px"><em>Dropdown option: Search By Location</em></div>
     
     - The user can also add new hints by typing the hint in the input box and clicking the add (+) button. This will then display the newly entered hint in a listing below the input box. After the user has entered a hint they will have the ability to remove the hint from the list by clicking the remove (-) button. 
     
+        <img src='frontend/public/assets/add-hint-mobile.png' alt='Add New Hint input' style="margin-top:10px; margin-left:35px"/>
 
-    <img src='frontend/public/assets/add-hint-mobile.png' alt='Add New Hint input' style="margin-top:10px; margin-left:35px"/>
-
-   <div style="margin-top:10px; margin-bottom:10px; margin-left:35px">Add New Hint input</div>
+        <div style="margin-top:10px; margin-bottom:10px; margin-left:35px"><em>Input: Add New Hint</em></div>
     
     - Form requirement: The user will not be able to submit a form without including at least one hint. If they try to submit a form without any hints, they will get a message asking them to include a hint.
 
-    <img src='frontend/public/assets/hint-requirement-mobile.png' alt='Hint requirement message' style="margin-top:10px; margin-left:35px"/>
+        <img src='frontend/public/assets/hint-requirement-mobile.png' alt='Hint requirement message' style="margin-top:10px; margin-left:35px"/>
 
-    <div style="margin-top:10px; margin-bottom:10px; margin-left:35px">Hint requirement message</div>
+        <div style="margin-top:10px; margin-bottom:10px; margin-left:35px"><em>Hint Requirement Message</em></div>
 
     - After the user submits the form, they are directed to a screen thanking them for their submission. They are also given an id to include with their item so whoever finds the item can report that they found it. 
 
-    <img src='frontend/public/assets/submission-successful-screen-mobile.png' alt='Thank you message to confirm that the Add New Item form has been submitted successfully' style="margin-top:10px; margin-left:35px"/>
+        <img src='frontend/public/assets/submission-successful-screen-mobile.png' alt='Thank you message to confirm that the Add New Item form has been submitted successfully' style="margin-top:10px; margin-left:35px"/>
 
     <!-- <img src="frontend/public/assets/add-item-screen.jpg" style="margin-left:35px"/>   
     <img src="frontend/public/assets/submit-success-screen.jpg"/> -->
@@ -65,7 +64,9 @@ We believe in creating joy for others by lifting them up, putting a smile on the
         
         The search screen also has buttons to allow the user to add new items or report that an item has been found.  
     
-    <img src="frontend/public/assets/search-map.jpg" style="margin-top:10px; margin-left:35px"/>  
+    <!-- <img src="frontend/public/assets/search-map.jpg" style="margin-top:10px; margin-left:35px"/>   -->
+
+    <img src='frontend/public/assets/search-map-screen-mobile.jpg' style='margin-top:10px; margin-left:35px'/>
 
 - USERS CAN VIEW ITEM DETAILS:  
     - The Item Details page displays the item's title, an image, the found status, a list of hints to help people find the item, and a map for the item.
@@ -74,17 +75,23 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 
         The map on the Item Details page shows a marker for only that item. Also, when you click on 'More Options,' Google Directions opens in a new tab pointing the user to the items location.  
 
-    <img src="frontend/public/assets/item-details.jpg" style="margin-top:10px; margin-left:35px"/>  
+    <!-- <img src="frontend/public/assets/item-details.jpg" style="margin-top:10px; margin-left:35px"/>   -->
+
+    <img src='frontend/public/assets/item-details-screen-mobile.jpg' style='margin-top:10px;margin-left:35px'/>
 
 - USERS CAN MARK ITEMS AS FOUND:  
     - When someone finds an item out in the world, there should be an id included with it. The user can enter this id in the Found Item Form. If someone enters an invalid id, they will see a message that says, "Invalid Id." If someone enters an id for an item that has already been found, they will see a message that says, "Item has already been found" and will see a button that opens the detail page for that item.  
 
         When someone enters a correct id for a hidden item, they will be directed to a form confirming that the item has been marked as found. The user can then add an optional comment about their experience.
 
-    <img src="frontend/public/assets/found-item.jpg" style="margin-left:35px"/>   
-    <img src="frontend/public/assets/found-success.jpg"/>
+    <!-- <img src="frontend/public/assets/found-item.jpg" style="margin-left:35px"/>   
+    <img src="frontend/public/assets/found-success.jpg"/> -->
 
-## Demo  
+    <img src='frontend/public/assets/found-items-screen-mobile.jpg' style='margin-top:10px; margin-left:35px'/>
+
+    <img src='frontend/public/assets/found-successful-screen-mobile.jpg' style='margin-top:10px; margin-left:12px'/>
+
+## Video Demo  
   <div style="margin-left:70px; margin-top:10px">
     <a href="https://youtu.be/6O1ScusK5Tc" target="_blank">
       <img src="frontend/public/assets/home-page.jpg"/>

@@ -6,6 +6,7 @@
 
 .success-image-background {
     background-image: url('https://source.unsplash.com/DbwYNr8RPbg/1200x1000');
+    /* background-image:url('../assets/blue-sky.jpg'); */
     /* background-repeat: no-repeat; */
     background-size: cover;
     background-position: center;
