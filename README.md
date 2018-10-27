@@ -94,7 +94,7 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 ## Video Demo  
   <div style="margin-left:70px; margin-top:10px">
     <a href="https://youtu.be/6O1ScusK5Tc" target="_blank">
-      <img src="frontend/public/assets/home-page.jpg"/>
+      <img src="frontend/public/assets/home-screen-desktop-minimized.jpg"/>
     </a>
   </div>
 
