@@ -15,17 +15,16 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 
 ## Technologies Used
 
-* Frontend: HTML, CSS, JavaScript, React, Redux
-* Backend: Node.js, Express, PostgreSQL
-* Deployment: Amazon Web Services, GitHub Pages
-* API(s): Google Maps API
+* HTML, CSS, JavaScript, React, Redux, Node.js, Express, PostgreSQL
+* Amazon Web Services, GitHub Pages
+* Google Maps API
 
 ## Key Features
 
-* Users can hide new items | [(view details)](#users-can-hide-new-items)
-* Users can search for hidden items | [(view details)](#users-can-search-for-hidden-items)
-* Users can view individual item details | [(view details)](#users-can-view-item-details)
-* Users can mark an item found | [(view details)](#users-can-mark-items-as-found)
+* Users can hide new items [( 1 )](#users-can-hide-new-items)
+* Users can search for hidden items [( 2 )](#users-can-search-for-hidden-items)
+* Users can view individual item details [( 3 )](#users-can-view-item-details)
+* Users can mark an item found [( 4 )](#users-can-mark-items-as-found)
 
 ## Features in Detail
 
