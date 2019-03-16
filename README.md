@@ -39,10 +39,10 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 
 * **Input location**
 
+  The user can either use their current location or search for an address using the Google Places Library.
+
   * Current location
   
-    The user can either use their current location or search for an address using the Google Places Library.
-
     <!-- ![Use Current Location dropdown option](/frontend/public/assets/use-current-location-mobile.png) -->
 
     ![Use Current Location dropdown option](/frontend/public/assets/use-current-location-desktop.png)
@@ -105,7 +105,7 @@ Another key feature of this application is the ability for users to search for h
 
 ### USERS CAN VIEW ITEM DETAILS
 
-<!-- ![Item details screen](/frontend/public/assets/item-details-screen-desktop.jpg) -->
+![Item details screen](/frontend/public/assets/item-details-screen-desktop.jpg)
 
 * **Item Details Page**
   
@@ -131,8 +131,6 @@ Another key feature of this application is the ability for users to search for h
   
     Also, when you click on 'More Options,' Google Directions opens in a new tab pointing the user to the items location.
 
-    ![Item details screen](/frontend/public/assets/item-details-screen-mobile.jpg)
-
 ### USERS CAN MARK ITEMS AS FOUND
 
 * **Found Items Form**
@@ -155,7 +153,7 @@ Another key feature of this application is the ability for users to search for h
   
     When someone enters a correct id for a hidden item, they will be directed to a form confirming that the item has been marked as found. The user can then add an optional comment about their experience.
 
-  ![Found successful screen](/frontend/public/assets/found-successful-screen-mobile.jpg)
+    ![Found successful screen](/frontend/public/assets/found-successful-screen-mobile.jpg)
 
 ## Video Demo
 
