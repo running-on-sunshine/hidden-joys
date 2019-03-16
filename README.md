@@ -36,6 +36,8 @@ We believe in creating joy for others by lifting them up, putting a smile on the
   
   ![Hide New Item form](/frontend/public/assets/add-item-screen-mobile.jpg)
 
+  *Hide New Item Form (mobile)*
+
 * **Input location**
 
   The user can either use their current location or search for an address using the Google Places Library.
@@ -54,13 +56,9 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 
 * **Adding & removing hints**
 
-  * Add hints
+  * **Add hints:** The user can also add new hints by typing the hint in the input box and clicking the add (+) button. This will then display the newly entered hint in a listing below the input box.
   
-    The user can also add new hints by typing the hint in the input box and clicking the add (+) button. This will then display the newly entered hint in a listing below the input box.
-  
-  * Remove hints
-
-    After the user has entered a hint they will have the ability to remove the hint from the list by clicking the remove (-) button.
+  * **Remove hints:** After the user has entered a hint they will have the ability to remove the hint from the list by clicking the remove (-) button.
   
     <!-- ![Add New Hint input](/frontend/public/assets/add-hint-mobile.png) -->
 
@@ -112,47 +110,34 @@ Another key feature of this application is the ability for users to search for h
 
 * **Item's status**
 
-  * Still hidden
-
-    If the item is still hidden, the status will say, "Item still hidden!" and there will be a button displayed that links to the found items page for the user to submit an item as found.
+  * **Still hidden:** If the item is still hidden, the status will say, "Item still hidden!" and there will be a button displayed that links to the found items page for the user to submit an item as found.
   
-  * Found
-
-    If an item has been found, the status will say, "Item Found!" Additionally, it will display comments, if any, left by the person who found the item.  
+  * **Found:** If an item has been found, the status will say, "Item Found!" Additionally, it will display comments, if any, left by the person who found the item.  
 
 * **Map**
-  
-  * Item's location
 
-    The map on the Item Details page shows a marker for only that item.
-  
-  * Option: Get Directions
-  
-    Also, when you click on 'More Options,' Google Directions opens in a new tab pointing the user to the items location.
+  The map on the Item Details page shows a marker for only that item. Also, when you click on 'More Options,' Google Directions opens in a new tab pointing the user to the items location.
 
 ### USERS CAN MARK ITEMS AS FOUND
+
+  ![Found items screen](/frontend/public/assets/found-items-screen-mobile.jpg)
+  ![Found successful screen](/frontend/public/assets/found-successful-screen-mobile.jpg)
 
 * **Found Items Form**
 
   When someone finds an item out in the world, there should be an id included with it. The user can enter this id in the Found Item Form.
 
-  ![Found items screen](/frontend/public/assets/found-items-screen-mobile.jpg)
+  <!-- ![Found items screen](/frontend/public/assets/found-items-screen-mobile.jpg) -->
   
 * **Item ID Validation**
   
-  * Invalid id
+  * **Invalid ID:** If someone enters an invalid id, they will see a message that says, "Invalid Id."
 
-    If someone enters an invalid id, they will see a message that says, "Invalid Id."
+  * **Correct ID previously submitted:** If someone enters an id for an item that has already been found, they will see a message that says, "Item has already been found" and will see a button that opens the detail page for that item.  
 
-  * Correct id previously submitted
+  * **Correct ID:** When someone enters a correct id for a hidden item, they will be directed to a form confirming that the item has been marked as found. The user can then add an optional comment about their experience.
 
-    If someone enters an id for an item that has already been found, they will see a message that says, "Item has already been found" and will see a button that opens the detail page for that item.  
-
-  * Correct id
-  
-    When someone enters a correct id for a hidden item, they will be directed to a form confirming that the item has been marked as found. The user can then add an optional comment about their experience.
-
-    ![Found successful screen](/frontend/public/assets/found-successful-screen-mobile.jpg)
+    <!-- ![Found successful screen](/frontend/public/assets/found-successful-screen-mobile.jpg) -->
 
 ## Video Demo
 
