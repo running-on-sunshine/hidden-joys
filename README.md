@@ -22,10 +22,10 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 
 ## Key Features
 
-* Users can hide new items [(view details)](#users-can-hide-new-items)
-* Users can search for hidden items [(view details)](#users-can-search-for-hidden-items)
-* Users can view individual item details [(view details)](#users-can-view-item-details)
-* Users can mark an item found [(view details)](#users-can-mark-items-as-found)
+* Users can hide new items | [(view details)](#users-can-hide-new-items)
+* Users can search for hidden items | [(view details)](#users-can-search-for-hidden-items)
+* Users can view individual item details | [(view details)](#users-can-view-item-details)
+* Users can mark an item found | [(view details)](#users-can-mark-items-as-found)
 
 ## Features in Detail
 
@@ -37,19 +37,21 @@ We believe in creating joy for others by lifting them up, putting a smile on the
   
   ![Hide New Item form](/frontend/public/assets/add-item-screen-mobile.jpg)
 
-  *Hide New Item Form (mobile)*
+* **Input location**
 
-* **Input location (2 options)**
+  * Current location
+  
+    The user can either use their current location or search for an address using the Google Places Library.
 
-  The user can either use their current location or search for an address using the Google Places Library.
+    <!-- ![Use Current Location dropdown option](/frontend/public/assets/use-current-location-mobile.png) -->
 
-  ![Use Current Location dropdown option](/frontend/public/assets/use-current-location-mobile.png)
+    ![Use Current Location dropdown option](/frontend/public/assets/use-current-location-desktop.png)
 
-  *Dropdown option 1: Use Current Location*
+  * Search by location
 
-  ![Search By Location dropdown option](/frontend/public/assets/search-by-location-mobile.png)
+    <!-- ![Search By Location dropdown option](/frontend/public/assets/search-by-location-mobile.png) -->
 
-  *Dropdown option 2: Search By Location*
+    ![Search By Location dropdown option](/frontend/public/assets/search-by-location-desktop.png)
 
 * **Adding & removing hints**
 
@@ -61,13 +63,17 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 
     After the user has entered a hint they will have the ability to remove the hint from the list by clicking the remove (-) button.
   
-    ![Add New Hint input](/frontend/public/assets/add-hint-mobile.png)
+    <!-- ![Add New Hint input](/frontend/public/assets/add-hint-mobile.png) -->
+
+    ![Add New Hint input](/frontend/public/assets/add-new-hints-desktop.png)
   
     *User Input: Add New Hint*
 
   * **Hint requirement:** The user will not be able to submit a form without including at least one hint. If they try to submit a form without any hints, they will get a message asking them to include a hint.
 
-    ![Hint requirement message](/frontend/public/assets/hint-requirement-mobile.png)
+    <!-- ![Hint requirement message](/frontend/public/assets/hint-requirement-mobile.png) -->
+
+    ![Hint requirement message](/frontend/public/assets/hint-requirement-desktop.png)
   
     *Hint Requirement Message*
 
@@ -75,11 +81,15 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 
   After the user submits the form, they are directed to a screen thanking them for their submission. They are also given an id to include with their item so whoever finds the item can report that they found it.
 
-    ![Thank you message to confirm that the Add New Item form has been submitted successfully](/frontend/public/assets/submission-successful-screen-mobile.png)
+    <!-- ![Thank you message to confirm that the Add New Item form has been submitted successfully](/frontend/public/assets/submission-successful-screen-mobile.png) -->
+  
+     ![Thank you message to confirm that the Add New Item form has been submitted successfully](/frontend/public/assets/submission-successful-screen-desktop.jpg)
 
 ### USERS CAN SEARCH FOR HIDDEN ITEMS
 
 Another key feature of this application is the ability for users to search for hidden items. On the search screen, users will see a map with markers representing hidden items.
+
+![Search map screen](/frontend/public/assets/search-map-screen-desktop.jpg)
 
 * **Search by location**
 
@@ -91,9 +101,11 @@ Another key feature of this application is the ability for users to search for h
   * Users are also able to filter the displayed markers by selecting All, Not Found, or Found.
   * Example: If someone just wants to see which items are still hidden, they select Not Found and the map will just display the items that are still hidden.
 
-  ![Search map screen](/frontend/public/assets/search-map-screen-mobile.jpg)
+  <!-- ![Search map screen](/frontend/public/assets/search-map-screen-mobile.jpg) -->
 
 ### USERS CAN VIEW ITEM DETAILS
+
+<!-- ![Item details screen](/frontend/public/assets/item-details-screen-desktop.jpg) -->
 
 * **Item Details Page**
   
@@ -119,15 +131,17 @@ Another key feature of this application is the ability for users to search for h
   
     Also, when you click on 'More Options,' Google Directions opens in a new tab pointing the user to the items location.
 
-  ![Item details screen](/frontend/public/assets/item-details-screen-mobile.jpg)
+    ![Item details screen](/frontend/public/assets/item-details-screen-mobile.jpg)
 
 ### USERS CAN MARK ITEMS AS FOUND
 
 * **Found Items Form**
 
   When someone finds an item out in the world, there should be an id included with it. The user can enter this id in the Found Item Form.
+
+  ![Found items screen](/frontend/public/assets/found-items-screen-mobile.jpg)
   
-* **Item id validation**
+* **Item ID Validation**
   
   * Invalid id
 
@@ -141,15 +155,9 @@ Another key feature of this application is the ability for users to search for h
   
     When someone enters a correct id for a hidden item, they will be directed to a form confirming that the item has been marked as found. The user can then add an optional comment about their experience.
 
-  ![Found items screen](/frontend/public/assets/found-items-screen-mobile.jpg)
-
   ![Found successful screen](/frontend/public/assets/found-successful-screen-mobile.jpg)
 
 ## Video Demo
-
-Click below to see a demonstration of how our application works!
-
-* Includes narration and captions while walking through the features.
 
 [![Hidden Joys Video Demo](/frontend/public/assets/home-screen-desktop-minimized.jpg)](https://youtu.be/6O1ScusK5Tc)
 
