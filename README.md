@@ -21,10 +21,10 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 
 ## Key Features
 
-* Users can hide new items [( 1 )](#users-can-hide-new-items)
-* Users can search for hidden items [( 2 )](#users-can-search-for-hidden-items)
-* Users can view individual item details [( 3 )](#users-can-view-item-details)
-* Users can mark an item found [( 4 )](#users-can-mark-items-as-found)
+* Users can hide new items [(1)](#users-can-hide-new-items)
+* Users can search for hidden items [(2)](#users-can-search-for-hidden-items)
+* Users can view individual item details [(3)](#users-can-view-item-details)
+* Users can mark an item found [(4)](#users-can-mark-items-as-found)
 
 ## Features in Detail
 
@@ -204,7 +204,7 @@ Another key feature of this application is the ability for users to search for h
 
   * **Note: before starting this process, we had purchased a domain for our site using Namecheap**
 
-  * Install Certbot [(Learn more about Certbot!)](https://certbot.eff.org/)
+  * Install Certbot
     * In terminal:
       * brew install certbot
       * sudo certbot certonly --manual --preferred-challenges=dns -d api.`<site-url>`
