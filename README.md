@@ -52,13 +52,15 @@ We believe in creating joy for others by lifting them up, putting a smile on the
 
     <!-- ![Search By Location dropdown option](/frontend/public/assets/search-by-location-mobile.png) -->
 
-    ![Search By Location dropdown option](/frontend/public/assets/search-by-location-desktop.png)
+    <!-- ![Search By Location dropdown option](/frontend/public/assets/search-by-location-desktop.png) -->
+
+    ![Search By Location dropdown option](/frontend/public/assets/search-by-location-alt-mobile.jpg)
 
 * **Adding & removing hints**
 
   * **Add hints:** The user can also add new hints by typing the hint in the input box and clicking the add (+) button. This will then display the newly entered hint in a listing below the input box.
   
-  * **Remove hints:** After the user has entered a hint they will have the ability to remove the hint from the list by clicking the remove (-) button.
+  * **Remove hints:** After the user has entered a hint, they will have the ability to remove the hint from the list by clicking the remove (-) button.
   
     <!-- ![Add New Hint input](/frontend/public/assets/add-hint-mobile.png) -->
 
@@ -74,13 +76,15 @@ We believe in creating joy for others by lifting them up, putting a smile on the
   
     *Hint Requirement Message*
 
-* **Submission confirmation**
+* **Confirmation of successful submission (yay!)**
 
-  After the user submits the form, they are directed to a screen thanking them for their submission. They are also given an id to include with their item so whoever finds the item can report that they found it.
+  After the user submits the form, they are directed to a screen thanking them for their submission. They are also given an id to include with their item, so whomever finds the item can report that they found it.
 
     <!-- ![Thank you message to confirm that the Add New Item form has been submitted successfully](/frontend/public/assets/submission-successful-screen-mobile.png) -->
   
      ![Thank you message to confirm that the Add New Item form has been submitted successfully](/frontend/public/assets/submission-successful-screen-desktop.jpg)
+
+---
 
 ### USERS CAN SEARCH FOR HIDDEN ITEMS
 
@@ -100,6 +104,8 @@ Another key feature of this application is the ability for users to search for h
 
   <!-- ![Search map screen](/frontend/public/assets/search-map-screen-mobile.jpg) -->
 
+---
+
 ### USERS CAN VIEW ITEM DETAILS
 
 ![Item details screen](/frontend/public/assets/item-details-screen-desktop.jpg)
@@ -117,6 +123,8 @@ Another key feature of this application is the ability for users to search for h
 * **Map**
 
   The map on the Item Details page shows a marker for only that item. Also, when you click on 'More Options,' Google Directions opens in a new tab pointing the user to the items location.
+
+---
 
 ### USERS CAN MARK ITEMS AS FOUND
 
@@ -147,11 +155,15 @@ Another key feature of this application is the ability for users to search for h
 
 ### Using the Google Maps API with a React application
 
+#### Displaying/loading Google Maps
+
 * **Problem:** The first challenge encountered with using the Google Maps API was figuring out how to display the map on the screen. The documentation on the Google Maps Platfrom page shows how to add a map to your site using HTML and vanilla JavaScript, but since our application is built with React, we needed to find another way to implement the API.
 
 * **Solution:** We installed the react-google-maps library.
-  * The git repo for this library can be found at github.com/tomchentw/react-google-maps.
+  * The git repo for this library can be found at [github.com/tomchentw/react-google-maps](github.com/tomchentw/react-google-maps).
   * The readme links to documentation on how to use the library.
+
+#### Creating a search box populated by the Google Places Library
 
 * **Problem:** Another problem encountered when dealing with Google Maps was creating a search box that is populated using the Google Places library.
 
@@ -168,39 +180,51 @@ Another key feature of this application is the ability for users to search for h
         })
     ```
 
-* **Problem:** Getting one info window to display at a time when a marker was clicked turned out to be a bit more diffcult than expected.
+#### Getting one info window to display at a time when a marker is clicked on the map
+
+* **Problem:** Getting one info window to display at a time when a marker was clicked turned out to be a bit more difficult than expected.
 
 * **Solution:** To handle this, we had to make each Marker a class component, so that we could keep track of state.
   * In the state, we could keep track of whether or not the marker was the active marker and also if it was open.
-  * Since we stored this in state, we were able to add a onClick handler to each marker to change these state values when a marker was clicked. Then, if a marker was open and was the active marker, we would then render the info window to the map.
+  * Since we stored this in state, we were able to add an onClick handler to each marker to change these state values when a marker was clicked. Then, if a marker was open and was the active marker, we would then render the info window to the map.
+
+---
 
 ### Deployment
 
+#### Installing SSL Certificates (Let's Encrypt with Certbot)
+
 * **Problem:** To deploy our site, we had our React frontend build files hosted on GitHub pages while our backend node files and database were stored on Amazon Web Services, where we used a free tier EC2 instance.
 
-  The issue we encountered was that GitHub served our site over HTTPS and our AWS was being served over HTTP.
+  * The issue we encountered was that GitHub served our site over HTTPS and our AWS was being served over HTTP.
   * When the site was loaded using HTTPS, it couldn't connect to our AWS instance and when it was loaded over HTTP, it wasn't able to get a user's current location using the geolocation `getCurrentPosition()` function.
   * Since, this was an important feature of our app, we needed to figure out how to serve our AWS over HTTPS.
 
 * **Solution:** To solve this problem we basically needed to add SSL certificates to our AWS instance that proves we were the owners of the https site we were connecting with. The following are steps to help accomplish this:
-  * **(Note: before starting this process we had purchased a domain for our site using namecheap)**
-  * Install certbot (in terminal, type: brew install certbot)
-  * In terminal:  sudo certbot certonly --manual --preferred-challenges=dns -d api.`<site-url>`
+
+  * **Note: before starting this process, we had purchased a domain for our site using Namecheap**
+
+  * Install Certbot [(Learn more about Certbot!)](https://certbot.eff.org/)
+    * In terminal:
+      * brew install certbot
+      * sudo certbot certonly --manual --preferred-challenges=dns -d api.`<site-url>`
     * This will give you a DNS TEXT record and value which can use be used (don't hit enter until the next step is complete)
-    * On namecheap, go to the Advanced DNS manager for the purchased domain
-      * Here, add the following fields:
-        * Type: CNAME Record / Host: api / Value: (this will be your AWS ec2 link)
-        * Type: TXT Record / Host: _acme-challenge.api / Value: (this will be the value that certbot generated in your terminal)
+
+  * On Namecheap, go to the Advanced DNS manager for the purchased domain
+    * Here, add the following fields:
+      * Type: CNAME Record / Host: api / Value: (this will be your AWS ec2 link)
+      * Type: TXT Record / Host: _acme-challenge.api / Value: (this will be the value that certbot generated in your terminal)
     * Once these values are added to namecheap, return to the terminal and hit enter
     * If you did this correctly, you will see a message saying 'Congratulations! Your certificate and chain have been saved at:'
-    * You will see that two .pem files were generated and stored on your local machine. (You need to get these keys onto your AWS server)
+  
+  * You will see that two .pem files were generated and stored on your local machine. (You need to get these keys onto your AWS server)
     * First, move the files somewhere you can access them. I put them on the desktop. To do this:
       * sudo cp /file-location/fullchain.pem ~/Desktop/  (file-location just refers to the route on your machine where .pem was stored)
       * sudo cp /file-location/privatekey.pem ~/Desktop/
     * After the files are moved, change the file extensions.  
       * /fullchain.pem -> .cert
       * /privatekey.pem -> .key
-    * Next, to add these files to our AWS instance, we used cyberduck. (You may have to install it first from cyberduck.io)
+  * Next, to add these files to our AWS instance, we used Cyberduck. (You may have to install it first from [cyberduck.io](https://cyberduck.io/))
     * Open cyberduck
       * Connect to AWS instance
       * Navigate to the ubuntu folder and create a folder called certs
